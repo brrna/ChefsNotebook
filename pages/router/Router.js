@@ -10,7 +10,7 @@ const Router = () => {
     const Stack = createNativeStackNavigator();
 
   return (
-    <Stack.Navigator >
+    <Stack.Navigator screenOptions={{headerShown: false}} >
         <Stack.Screen name='SplashScreen' component={Splash} />
         <Stack.Screen name='CategoriesScreen' component={Categories} />
         <Stack.Screen name='MealsScreen' component={Meals} />
