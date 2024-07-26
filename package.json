@@ -9,9 +9,13 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/aguafina-script": "^0.2.3",
+    "@expo-google-fonts/dev": "^0.2.3",
+    "@expo-google-fonts/inter": "^0.2.3",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.10.1",
     "expo": "~51.0.22",
+    "expo-font": "~12.0.9",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-native": "0.74.3",
