@@ -1,9 +1,7 @@
 import {createContext} from "react";
-import { colors } from "./Colors";
+import { color } from "./Colors";
 
 export const ColorContext = createContext();
-
-const color = colors;
 
 export const ColorContextProvider = (props) => {
     return(

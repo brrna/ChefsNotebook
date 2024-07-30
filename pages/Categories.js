@@ -1,14 +1,29 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import React, { useContext } from 'react'
+import { ColorContext } from '../context/ThemeContext/ColorContext'
 
 const Categories = () => {
+
+  let { color } = useContext(ColorContext)
+
+  const styles = createStyles(color)
+
   return (
-    <View>
-      <Text>Category</Text>
-    </View>
+    <SafeAreaView style={styles.container} >
+      
+    </SafeAreaView>
   )
 }
 
 export default Categories
 
-const styles = StyleSheet.create({})
+const createStyles = (color) => {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: color.green,
+      justifyContent: "center",
+      alignItems: "center"
+    }
+  })
+}

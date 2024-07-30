@@ -4,13 +4,14 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-nat
 import { useNavigation } from '@react-navigation/native'
 import { useFonts, AguafinaScript_400Regular } from '@expo-google-fonts/aguafina-script';
 import { ColorContext } from '../context/ThemeContext/ColorContext';
-import { color } from '../context/ThemeContext/Colors';
 
 const Splash = () => {
 
   let { color } = useContext(ColorContext);
 
   const navigation = useNavigation();
+
+  const styles = createStyles(color);
 
   const [fontsLoaded] = useFonts({
     AguafinaScript_400Regular,
@@ -43,22 +44,24 @@ const Splash = () => {
 
 export default Splash
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: color.green,
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  view: {
-    marginBottom: hp(10)
-  },
-  image: {
-    height: hp(40),
-    width: wp(60)
-  },
-  text: {
-    fontFamily: "AguafinaScript_400Regular",
-    fontSize: hp(6)
-  }
-})
+const createStyles = (color) => {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: color.green,
+      justifyContent: "center",
+      alignItems: "center"
+    },
+    view: {
+      marginBottom: hp(10)
+    },
+    image: {
+      height: hp(40),
+      width: wp(60)
+    },
+    text: {
+      fontFamily: "AguafinaScript_400Regular",
+      fontSize: hp(6)
+    }
+  })
+}
