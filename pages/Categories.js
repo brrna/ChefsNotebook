@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native'
 import React, { useContext } from 'react'
 import { ColorContext } from '../context/ThemeContext/ColorContext'
 import MyHeader from '../components/myHeader/MyHeader'
@@ -11,6 +11,7 @@ const Categories = () => {
 
   return (
     <SafeAreaView style={styles.container} >
+      <StatusBar />
       <MyHeader />
     </SafeAreaView>
   )
@@ -23,7 +24,6 @@ const createStyles = (color) => {
     container: {
       flex: 1,
       backgroundColor: color.green,
-      justifyContent: "center",
       alignItems: "center"
     }
   })
