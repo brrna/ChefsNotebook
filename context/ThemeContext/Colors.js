@@ -1,4 +1,4 @@
-export const lightTheme = {
+export const color = {
     green: "#6eaa86",
     darkGreen: "#204143",
     lightGreen: "#8aa88e",
