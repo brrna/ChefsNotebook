@@ -2,20 +2,16 @@ import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React, { useContext, useEffect } from 'react'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import { useNavigation } from '@react-navigation/native'
-import { useFonts, AguafinaScript_400Regular } from '@expo-google-fonts/aguafina-script';
 import { ColorContext } from '../context/ThemeContext/ColorContext';
+import { FontContext } from '../context/FontContext/FontContext';
 
 const Splash = () => {
 
   let { color } = useContext(ColorContext);
+  let { fonts } = useContext(FontContext)
 
   const navigation = useNavigation();
-
-  const styles = createStyles(color);
-
-  const [fontsLoaded] = useFonts({
-    AguafinaScript_400Regular,
-  });
+  const styles = createStyles(color, fonts);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,10 +19,6 @@ const Splash = () => {
     }, 2000);
     return () => clearTimeout(timer);
   }, [navigation]);
-
-  if (!fontsLoaded) {
-    return null; // Wait for the fonts to load
-  }
 
   return (
     <SafeAreaView style={styles.container} >
@@ -44,7 +36,7 @@ const Splash = () => {
 
 export default Splash
 
-const createStyles = (color) => {
+const createStyles = (color, fonts) => {
   return StyleSheet.create({
     container: {
       flex: 1,
@@ -60,8 +52,9 @@ const createStyles = (color) => {
       width: wp(60)
     },
     text: {
-      fontFamily: "AguafinaScript_400Regular",
-      fontSize: hp(6)
+      fontFamily: fonts.handwrite,
+      fontSize: hp(6),
+      color: color.cream
     }
   })
 }

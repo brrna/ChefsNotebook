@@ -1,6 +1,7 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import { ColorContext } from '../context/ThemeContext/ColorContext'
+import MyHeader from '../components/myHeader/MyHeader'
 
 const Categories = () => {
 
@@ -10,7 +11,7 @@ const Categories = () => {
 
   return (
     <SafeAreaView style={styles.container} >
-      
+      <MyHeader />
     </SafeAreaView>
   )
 }
