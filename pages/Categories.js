@@ -5,6 +5,7 @@ import MyHeader from '../components/myHeader/MyHeader'
 import useFetchCategories from '../hooks/useFetchCategories'
 import Loading from "../components/loading/Loading"
 import Error from '../components/error/Error'
+import MealOption from '../components/mealOption/MealOption'
 
 const Categories = () => {
 
@@ -15,7 +16,7 @@ const Categories = () => {
                                                      
 
   //strCategory
-  const renderMeals = ({item}) => <Text>{item.strCategory}</Text>
+  const renderMeals = ({item}) => <MealOption option={item.strCategory} />
   const keyMeals = (item, index) => index.toString()
 
   if (loading) {
