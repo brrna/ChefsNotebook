@@ -10,8 +10,8 @@ function useFetchCategories(url) {
     const fetchData = async() => {
         setLoading(true)
         try { 
-            const {data: responseData} = await axios.get(url);
-            setData(responseData.meals)
+            const response = await axios.get(url);
+            setData(response.data.categories)
         } catch (err) {
             console.error("Error fetching data:", err.responseData?.data || err.message );
             setError(err)
@@ -22,7 +22,7 @@ function useFetchCategories(url) {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [url]);
 
     return {data, loading, error}
 

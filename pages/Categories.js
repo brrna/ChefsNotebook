@@ -6,17 +6,21 @@ import useFetchCategories from '../hooks/useFetchCategories'
 import Loading from "../components/loading/Loading"
 import Error from '../components/error/Error'
 import MealOption from '../components/mealOption/MealOption'
+import{CATEGORY_URL} from "@env"
+
 
 const Categories = () => {
 
   let { color } = useContext(ColorContext)
 
   const styles = createStyles(color)
-  const {loading, data, error} = useFetchCategories("https://www.themealdb.com/api/json/v1/1/list.php?c=list");
+  const {loading, data, error} = useFetchCategories(CATEGORY_URL);
+
+  console.log("Data:", data);
                                                      
 
   //strCategory
-  const renderMeals = ({item}) => <MealOption option={item.strCategory} />
+  const renderMeals = ({item}) => (<MealOption option={item.strCategory} img={item.strCategoryThumb} />)
   const keyMeals = (item, index) => index.toString()
 
   if (loading) {
