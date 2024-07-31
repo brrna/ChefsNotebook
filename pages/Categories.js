@@ -4,6 +4,7 @@ import { ColorContext } from '../context/ThemeContext/ColorContext'
 import MyHeader from '../components/myHeader/MyHeader'
 import useFetchCategories from '../hooks/useFetchCategories'
 import Loading from "../components/loading/Loading"
+import Error from '../components/error/Error'
 
 const Categories = () => {
 
@@ -17,7 +18,7 @@ const Categories = () => {
   const renderMeals = ({item}) => <Text>{item.strCategory}</Text>
   const keyMeals = (item, index) => index.toString()
 
-  if (true) {
+  if (loading) {
     return (
       <Loading />
     )
@@ -25,12 +26,7 @@ const Categories = () => {
 
   if (error) {
     return (
-      <SafeAreaView style={styles.loadingView} >
-        <Text
-          style={styles.text}>
-          Error fetching data
-        </Text>
-      </SafeAreaView>
+      <Error />
     )
   }
 
