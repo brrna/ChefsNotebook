@@ -14,7 +14,7 @@ const Categories = () => {
   let { color } = useContext(ColorContext)
 
   const styles = createStyles(color)
-  const { loading, error, data } = useFetchCategories(CATEGORY_URL);
+  const { loading, error } = useFetchCategories(CATEGORY_URL);
 
 
   if (loading) {
