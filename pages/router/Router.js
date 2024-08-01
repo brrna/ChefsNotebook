@@ -2,8 +2,8 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Splash from '../Splash';
 import Categories from '../Categories';
-import Meals from '../Meals';
 import Receipe from '../Receipe';
+import Meals from "../Meals"
 
 const Router = () => {
 

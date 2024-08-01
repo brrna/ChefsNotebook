@@ -4,17 +4,19 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 export default function createStyles(color) {
     return StyleSheet.create({
         container: {
-            borderColor: "black",
             borderWidth: 1,
-            height: hp(60),
+            height: hp(65),
             width: wp(100),
-            alignItems: "center"
+            alignItems: "center",
         },
-        header: {
-            backgroundColor: "red",
-            height: hp(5),
-            width: wp(100)
-        },
-        headerText: {}
+        mealView: {
+            backgroundColor: color.green,
+            width: wp(100),
+            height: hp(58),
+            borderWidth: 1,
+            borderColor: "black",
+            borderTopRightRadius: wp(50),
+            borderTopLeftRadius: wp(50)
+        }
     })
 }

@@ -1,23 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import { ColorContext } from '../../context/ThemeContext/ColorContext'
 import createStyles from './MealPartStyle'
 
-const MealPart = () => {
+const MealPart = ({ option }) => {
 
-    let {color} = useContext(ColorContext)
+  let { color } = useContext(ColorContext)
 
-    const styles = createStyles(color)
+  const styles = createStyles(color)
 
   return (
     <View style={styles.container} >
-      <View style={styles.header} >
-        <Text>Meals</Text>
+      <View style={styles.mealView} >
       </View>
     </View>
   )
 }
 
 export default MealPart
-
-const styles = StyleSheet.create({})
