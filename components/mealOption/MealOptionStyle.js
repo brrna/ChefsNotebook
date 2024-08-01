@@ -4,24 +4,22 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 export default function createStyle(color, fonts) {
     return StyleSheet.create({
         container: {
-            backgroundColor: color.green,
+            backgroundColor: "red",
             borderColor: "black",
-            flexDirection: "row",
             alignItems: "center",
+            justifyContent: "center",
             borderWidth: 1,
-            width: wp(100),
-            height: hp(18)
+            width: wp(32),
+            height: hp(16)
         },
         image: {
-            height: hp(16),
-            width: wp(32),
+            height: hp(13),
+            width: wp(26),
             borderRadius: 1000000,
-            marginLeft: wp(7),
-            resizeMode: "contain"
+            resizeMode: "center",
         },
         text: {
-            marginLeft: wp(5),
-            fontSize: hp(3)
+            fontSize: hp(2)
         }
     })
 }
