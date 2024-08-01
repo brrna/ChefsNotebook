@@ -1,14 +1,14 @@
-import { FlatList, SafeAreaView, ScrollView, StatusBar, StyleSheet, View } from 'react-native'
+import { SafeAreaView, StatusBar, StyleSheet, } from 'react-native'
 import React, { useContext } from 'react'
 import { ColorContext } from '../context/ThemeContext/ColorContext'
 import MyHeader from '../components/myHeader/MyHeader'
 import useFetchCategories from '../hooks/useFetchCategories'
 import Loading from "../components/loading/Loading"
 import Error from '../components/error/Error'
-import MealOption from '../components/mealOption/MealOption'
 import { CATEGORY_URL } from "@env"
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import MyFlatlist from '../components/myFlatlist/MyFlatlist'
+import MealCard from '../components/mealCard/MealCard'
+import MealPart from '../components/mealPart/MealPart'
 
 const Categories = () => {
 
@@ -35,6 +35,7 @@ const Categories = () => {
       <StatusBar />
       <MyHeader />
       <MyFlatlist />
+      <MealPart />
     </SafeAreaView>
   )
 }
@@ -45,7 +46,7 @@ const createStyles = (color) => {
   return StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: color.green,
+      backgroundColor: color.cream,
       alignItems: "center"
     },
     flatlist: {

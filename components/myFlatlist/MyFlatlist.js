@@ -6,16 +6,26 @@ import useFetchCategories from '../../hooks/useFetchCategories';
 import {CATEGORY_URL} from "@env"
 import MealOption from '../mealOption/MealOption';
 import { icons } from './Icons';
+import { useNavigation } from '@react-navigation/native';
 
 const MyFlatlist = () => {
 
     let {color} = useContext(ColorContext);
 
-    const styles = createStyle(color)
+    const styles = createStyle(color);
+
+    const navigation = useNavigation();
+    const handlePress = (id) => {
+      navigation.navigate('MealsScreen', {id})
+    };
 
     const {data} = useFetchCategories(CATEGORY_URL)
-
-    const renderMeals = ({ item, index }) => (<MealOption option={item.strCategory} img={icons[index % icons.length]} />)
+    const renderMeals = ({ item, index }) => (
+      <MealOption 
+        option={item.strCategory} 
+        img={icons[index % icons.length]}
+        onPress={() => handlePress()} />
+    )
     const keyMeals = (item, index) => index.toString()
 
   return (
@@ -24,7 +34,8 @@ const MyFlatlist = () => {
         horizontal
         data={data}
         renderItem={renderMeals}
-        keyExtractor={keyMeals}/>
+        keyExtractor={keyMeals}
+        showsHorizontalScrollIndicator={false} />
     </View>
   )
 }

@@ -6,14 +6,12 @@ export default function createStyles(color, fonts) {
         container: {
             height: hp(11),
             width: wp(100),
-            backgroundColor: color.green,
+            backgroundColor: color.cream,
             justifyContent: "center",
-            padding: wp(2),
-            borderBottomRightRadius: wp(10),
-            borderBottomLeftRadius: wp(10)
+            padding: wp(2)
         },
         text: {
-            color: color.cream,
+            color: color.green,
             fontSize: hp(5),
             fontFamily: fonts.handwrite,
             marginLeft: wp(3),
