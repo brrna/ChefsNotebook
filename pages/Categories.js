@@ -8,34 +8,15 @@ import Error from '../components/error/Error'
 import MealOption from '../components/mealOption/MealOption'
 import { CATEGORY_URL } from "@env"
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
+import MyFlatlist from '../components/myFlatlist/MyFlatlist'
 
 const Categories = () => {
 
-  let { color, selectedColor } = useContext(ColorContext)
+  let { color } = useContext(ColorContext)
 
-  const styles = createStyles(color, selectedColor)
-  const { loading, data, error } = useFetchCategories(CATEGORY_URL);
+  const styles = createStyles(color)
+  const { loading, error } = useFetchCategories(CATEGORY_URL);
 
-  const images = [
-    require("../assets/icons/beef.png"),
-    require("../assets/icons/chicken.png"),
-    require("../assets/icons/dessert.png"),
-    require("../assets/icons/lamb.png"),
-    require("../assets/icons/misell.png"),
-    require("../assets/icons/pasta.png"),
-    require("../assets/icons/pork.png"),
-    require("../assets/icons/seafood.png"),
-    require("../assets/icons/side.png"),
-    require("../assets/icons/starter.png"),
-    require("../assets/icons/vegan.png"),
-    require("../assets/icons/vegetarien.png"),
-    require("../assets/icons/breakfast.png"),
-    require("../assets/icons/goat.png")
-  ]
-
-  //strCategory
-  const renderMeals = ({ item, index }) => (<MealOption option={item.strCategory} img={images[index % images.length]} />)
-  const keyMeals = (item, index) => index.toString()
 
   if (loading) {
     return (
@@ -53,11 +34,7 @@ const Categories = () => {
     <SafeAreaView style={styles.container} >
       <StatusBar />
       <MyHeader />
-      <FlatList
-        horizontal
-        data={data}
-        renderItem={renderMeals}
-        keyExtractor={keyMeals} />
+      <MyFlatlist />
     </SafeAreaView>
   )
 }
