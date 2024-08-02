@@ -6,7 +6,6 @@ import useFetchCategories from '../../hooks/useFetchCategories';
 import { CATEGORY_URL } from "@env"
 import MealOption from '../mealOption/MealOption';
 import { icons } from './Icons';
-import { useNavigation } from '@react-navigation/native';
 import { MealContext } from '../../context/MealContext/MealContext';
 
 const MyFlatlist = () => {
@@ -15,7 +14,6 @@ const MyFlatlist = () => {
   const { setSelectedCategory } = useContext(MealContext)
   const styles = createStyle(color);
 
-  const navigation = useNavigation();
   const handlePress = (meal) => {
     setSelectedCategory(meal)
   };
@@ -42,5 +40,3 @@ const MyFlatlist = () => {
 }
 
 export default MyFlatlist
-
-const styles = StyleSheet.create({})
