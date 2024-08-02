@@ -47,9 +47,6 @@ const createStyles = (color) => {
       flex: 1,
       backgroundColor: color.cream,
       alignItems: "center"
-    },
-    flatlist: {
-      backgroundColor: "blue"
     }
   })
 }
