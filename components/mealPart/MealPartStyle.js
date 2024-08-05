@@ -15,7 +15,7 @@ export default function createStyles(color, fonts) {
         },
         headerText: {
             fontFamily: fonts.handwrite,
-            fontSize: wp(5),
+            fontSize: wp(6),
             color: color.navyBlue
         },
         mealView: {

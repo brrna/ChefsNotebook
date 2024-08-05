@@ -15,12 +15,15 @@ export default function createStyles(color, fonts) {
             width: wp(69),
             borderRadius: 10000000,
             resizeMode: "contain",
-            marginBottom: hp(7)
+            marginBottom: hp(1),
+            borderWidth: wp(1),
+            borderColor: color.cream
         },
         text: {
-            fontSize: hp(3),
+            fontSize: hp(3.5),
             fontFamily: fonts.handwrite,
-            marginTop: hp(4)
+            color: color.cream,
+            marginBottom: hp(5)
         }
     })
 }

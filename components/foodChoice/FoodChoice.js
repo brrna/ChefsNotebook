@@ -13,14 +13,13 @@ const FoodChoice = ({ img, foodname, onPress }) => {
 
     return (
         <View style={styles.container} >
-            <Text style={styles.text} >{foodname}</Text>
             <Pressable 
-                onPress={onPress}
-                style={styles.image} >
+                onPress={onPress} >
                 <Image
                     style={styles.image}
                     source={{ uri: img }} />
             </Pressable>
+            <Text style={styles.text} >{foodname}</Text>
         </View>
     )
 }
