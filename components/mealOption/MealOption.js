@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { View, Text, Image, Pressable } from "react-native"
+import { View, Image, Pressable } from "react-native"
 import createStyle from "./MealOptionStyle";
 import { ColorContext } from "../../context/ThemeContext/ColorContext";
 import { FontContext } from "../../context/FontContext/FontContext"

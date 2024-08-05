@@ -6,16 +6,31 @@ import { MealContext } from '../../context/MealContext/MealContext'
 import { FontContext } from '../../context/FontContext/FontContext'
 import useFetchMeals from '../../hooks/useFetchMeals'
 import { MEAL_URL } from '@env'
+import FoodChoice from '../foodChoice/FoodChoice'
+import { useNavigation } from '@react-navigation/native'
 
 const MealPart = () => {
 
-  let { color } = useContext(ColorContext)
-  let { selectedCategory } = useContext(MealContext)
-  let { fonts } = useContext(FontContext)
+  let { color } = useContext(ColorContext);
+  let { selectedCategory } = useContext(MealContext);
+  let { fonts } = useContext(FontContext);
 
-  const styles = createStyles(color, fonts)
+  const styles = createStyles(color, fonts);
+  const { data } = useFetchMeals(`${MEAL_URL}${selectedCategory?.strCategory}`);
+  const navigation = useNavigation();
 
-  const { data } = useFetchMeals(`${MEAL_URL}${selectedCategory?.strCategory}`)
+  const handlePress = (id) => {
+    navigation.navigate('ReceipeScreen', {id})
+  }
+
+  const keyFood = (item) => item.idMeal
+
+  const renderFood = ({ item }) => (
+    <FoodChoice 
+      onPress={() => handlePress(item.idMeal)}
+      img={item.strMealThumb}
+      foodname={item.strMeal} />
+  )
 
   return (
     <View style={styles.container} >
@@ -26,11 +41,10 @@ const MealPart = () => {
           </View>
           <View style={styles.mealView}>
             <FlatList
+              horizontal
               data={data}
-              keyExtractor={(item) => item.idMeal}
-              renderItem={({ item }) => (
-                <Text style={styles.mealText}>{item.strMeal}</Text>
-              )}
+              keyExtractor={keyFood}
+              renderItem={renderFood}
             />
           </View>
         </View>

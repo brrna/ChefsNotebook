@@ -9,21 +9,21 @@ export default function createStyles(color, fonts) {
             alignItems: "center"
         },
         headerView: {
-            height: hp(6),
+            height: hp(8),
             justifyContent: "center",
             alignItems: "center"
         },
         headerText: {
             fontFamily: fonts.handwrite,
             fontSize: wp(5),
-            color: color.green
+            color: color.navyBlue
         },
         mealView: {
             backgroundColor: color.green,
             width: wp(100),
             height: hp(58),
-            borderTopRightRadius: wp(50),
-            borderTopLeftRadius: wp(50)
+            borderTopRightRadius: wp(49),
+            borderTopLeftRadius: wp(49)
         },
         firstView: {
             height: hp(62),
