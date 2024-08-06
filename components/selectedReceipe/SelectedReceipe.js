@@ -5,6 +5,7 @@ import MyBackHeader from '../myBackHeader/MyBackHeader';
 import { FontContext } from "../../context/FontContext/FontContext"
 import { ColorContext } from '../../context/ThemeContext/ColorContext';
 import { useNavigation } from '@react-navigation/native';
+import YoutubePlayer from '../youtube/YoutubePlayer';
 
 const SelectedReceipe = ({ meal }) => {
 
@@ -13,6 +14,8 @@ const SelectedReceipe = ({ meal }) => {
 
     const styles = createStyles(fonts, color);
     const navigation = useNavigation();
+    const videoId = meal.strYoutube.split('v=')[1]?.split('&')[0];
+    console.log(videoId)
 
     const handlePress = () => {
         navigation.navigate("CategoriesScreen")
@@ -56,10 +59,10 @@ const SelectedReceipe = ({ meal }) => {
                     </Text>
                 </View>
                 {
-                   // videoId &&
+                    videoId &&
                      (
                         <View>
-                            <Text>you can watch the recipe here: </Text>
+                            <YoutubePlayer videoId={videoId} />
                         </View>
                     )
                 }
