@@ -1,12 +1,10 @@
 import { ScrollView, View, Text, Image } from 'react-native'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import createStyles from './SelectedReceipeStyle';
 import MyBackHeader from '../myBackHeader/MyBackHeader';
 import { FontContext } from "../../context/FontContext/FontContext"
 import { ColorContext } from '../../context/ThemeContext/ColorContext';
 import { useNavigation } from '@react-navigation/native';
-import Youtube, { getYoutubeMeta } from 'react-native-youtube-iframe';
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const SelectedReceipe = ({ meal }) => {
 
@@ -14,8 +12,7 @@ const SelectedReceipe = ({ meal }) => {
     let { color } = useContext(ColorContext)
 
     const styles = createStyles(fonts, color);
-    const navigation = useNavigation()
-    const videoId = getYoutubeMeta(meal.strYoutube)
+    const navigation = useNavigation();
 
     const handlePress = () => {
         navigation.navigate("CategoriesScreen")
@@ -31,22 +28,6 @@ const SelectedReceipe = ({ meal }) => {
             ingredients.push(ingredient);
         }
     }
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(meal.strYoutube); // API URL'sini kendi URL'nizle değiştirin
-                const text = await response.text(); // Yanıtı metin olarak al
-                console.log('Response Text:', text); // Yanıtı kontrol edin
-                const data = JSON.parse(text); // JSON.parse kullanarak parse edin
-                setJsonData(data);
-            } catch (error) {
-                console.error('JSON parse error:', error);
-            }
-        };
-
-        fetchData();
-    }, []); // 
 
     return (
         <ScrollView style={styles.container} >
@@ -75,13 +56,10 @@ const SelectedReceipe = ({ meal }) => {
                     </Text>
                 </View>
                 {
-                    videoId && (
+                   // videoId &&
+                     (
                         <View>
                             <Text>you can watch the recipe here: </Text>
-                            <Youtube
-                                videoId={videoId}
-                                height={hp(25)}
-                                play={false} />
                         </View>
                     )
                 }

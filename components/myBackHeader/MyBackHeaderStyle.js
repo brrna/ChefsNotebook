@@ -6,11 +6,11 @@ export default function createStyles(fonts) {
         container: {
             position: "absolute",
             width: wp(100),
-            height: hp(11),
+            height: hp(10),
             justifyContent: "center"
         },
         backButton: {
-            height: hp(8),
+            height: hp(5),
             width: wp(14),
             marginLeft: wp(3),
             justifyContent: "center",
