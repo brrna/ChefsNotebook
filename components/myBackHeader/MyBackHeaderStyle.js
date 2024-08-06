@@ -12,17 +12,9 @@ export default function createStyles(fonts) {
         backButton: {
             height: hp(8),
             width: wp(14),
-            marginLeft: wp(4),
+            marginLeft: wp(3),
             justifyContent: "center",
             alignItems: "center"
-        },
-        icon: {
-            backgroundColor: "black",
-            height: hp(6),
-            width: wp(12),
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: hp(200)
         }
     })
 }
