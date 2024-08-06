@@ -10,7 +10,6 @@ export default function createStyles(color, fonts) {
             justifyContent: "space-evenly"
         },
         image: {
-            backgroundColor: "purple",
             height: hp(35),
             width: wp(69),
             borderRadius: 10000000,
