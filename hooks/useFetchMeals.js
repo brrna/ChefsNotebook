@@ -11,8 +11,7 @@ function useFetchMeals(url) {
         setLoading(true)
         try {
             const response = await axios.get(url);
-            const meals = response.data.meals ? response.data.meals : [];
-            setData(meals)
+            setData(response.data.meals)
         } catch (err) {
             console.error("Error fetching data:", err.responseData?.data || err.message )
             setError(err)

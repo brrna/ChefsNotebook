@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from 'react-native'
+import { FlatList, View } from 'react-native'
 import React, { useContext } from 'react'
 import { ColorContext } from '../../context/ThemeContext/ColorContext'
 import createStyle from './MyFlatlistStyle';

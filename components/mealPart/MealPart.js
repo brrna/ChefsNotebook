@@ -21,7 +21,6 @@ const MealPart = () => {
 
   const handlePress = (id) => {
     navigation.navigate('ReceipeScreen', {id})
-    console.log("id",id)
   }
 
   const keyFood = (item) => item.idMeal
