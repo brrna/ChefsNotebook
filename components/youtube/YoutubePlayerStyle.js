@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen"
 
-export default function createdStyle() {
+export default function createdStyle(fonts, color) {
     return StyleSheet.create({
         container: {
             height: hp(35),
@@ -17,7 +17,10 @@ export default function createdStyle() {
             marginLeft: wp(3)
         },
         text: {
-            fontSize: hp(2.5)
+            fontSize: hp(2.5),
+            fontFamily: fonts.dosis,
+            fontWeight: "700",
+            color: color.lightGreen
         }
     })
 }

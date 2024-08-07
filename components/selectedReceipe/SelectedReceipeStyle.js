@@ -30,12 +30,17 @@ export default function createStyles(fonts, color) {
         areaText: {
             fontSize: hp(2.5),
             marginLeft: wp(3),
-            marginTop: hp(0.5)
+            marginTop: hp(0.5),
+            fontFamily: fonts.edufont,
+            color: color.lightGreen
         },
         headerText: {
-            fontSize: hp(2.2),
+            fontSize: hp(4),
             marginLeft: wp(3),
-            marginTop: hp(1.5)
+            marginBottom: wp(2),
+            fontFamily: fonts.dosis,
+            fontWeight: "600",
+            color: color.green
         },
         ingredientsView: {
             width: wp(100)
@@ -45,13 +50,18 @@ export default function createStyles(fonts, color) {
             height: hp(4),
             flexDirection: "row",
             alignItems: "center",
-            marginLeft: wp(3)
+            marginLeft: wp(4)
+        },
+        ingredient: {
+            fontFamily: fonts.edufont,
+            color: color.navyBlue,
+            fontSize: hp(2.5)
         },
         item: {
             height: 10,
             width: 10,
             borderRadius: 1000000,
-            backgroundColor: color.navyBlue
+            backgroundColor: color.green
         },
         instructionView: {
             padding: wp(1.8)

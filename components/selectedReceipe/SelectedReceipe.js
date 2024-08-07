@@ -15,7 +15,6 @@ const SelectedReceipe = ({ meal }) => {
     const styles = createStyles(fonts, color);
     const navigation = useNavigation();
     const videoId = meal.strYoutube.split('v=')[1]?.split('&')[0];
-    console.log(videoId)
 
     const handlePress = () => {
         navigation.navigate("CategoriesScreen")
@@ -48,13 +47,13 @@ const SelectedReceipe = ({ meal }) => {
                     {ingredients.map((ingredient, index) => (
                         <View key={index} style={styles.ingredientItem} >
                             <View style={styles.item} ></View>
-                            <Text> {ingredient}</Text>
+                            <Text style={styles.ingredient} > {ingredient}</Text>
                         </View>
                     ))}
                 </View>
                 <Text style={styles.headerText} >Preparation of the Meal</Text>
                 <View style={styles.instructionView} >
-                    <Text>
+                    <Text style={styles.ingredient} >
                         {meal.strInstructions}
                     </Text>
                 </View>
