@@ -37,7 +37,6 @@ const MealPart = () => {
       {selectedCategory ? (
         <View>
           <View style={styles.headerView} >
-            <Text style={styles.headerText} >{selectedCategory.strCategory}</Text>
           </View>
           <View style={styles.mealView}>
             <FlatList

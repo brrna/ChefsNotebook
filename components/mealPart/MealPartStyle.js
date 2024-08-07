@@ -9,7 +9,7 @@ export default function createStyles(color, fonts) {
             alignItems: "center"
         },
         headerView: {
-            height: hp(8),
+            height: hp(5),
             justifyContent: "center",
             alignItems: "center"
         },
@@ -20,10 +20,10 @@ export default function createStyles(color, fonts) {
         },
         mealView: {
             backgroundColor: color.green,
-            width: wp(100),
+            width: wp(155),
             height: hp(58),
-            borderTopRightRadius: wp(49),
-            borderTopLeftRadius: wp(49)
+            borderTopEndRadius: wp(100),
+            borderTopStartRadius: wp(100)
         },
         firstView: {
             height: hp(62),

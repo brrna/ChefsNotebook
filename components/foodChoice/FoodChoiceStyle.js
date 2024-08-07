@@ -5,7 +5,7 @@ export default function createStyles(color, fonts) {
     return StyleSheet.create({
         container: {
             height: hp(63),
-            width: wp(100),
+            width: wp(155),
             alignItems: "center",
             justifyContent: "space-evenly"
         },
