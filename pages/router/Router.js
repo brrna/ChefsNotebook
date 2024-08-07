@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Categories from '../Categories';
 import Receipe from '../Receipe';
 import Meals from "../Meals"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { ColorContext } from '../../context/ThemeContext/ColorContext';
+import { color } from '../../context/ThemeContext/Colors';
 
 const Router = () => {
 
@@ -28,7 +31,15 @@ const Router = () => {
   }
 
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}} >
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          height: hp(10),
+          backgroundColor: color.green
+        }
+      }) } >
       <Tab.Screen name='Home' component={HomeStack} />
       <Tab.Screen name='Meal' component={MealStack} />
     </Tab.Navigator>

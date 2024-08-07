@@ -1,17 +1,21 @@
-import { FlatList, SafeAreaView, StyleSheet, Text } from 'react-native'
-import React, { useContext } from 'react'
+import { FlatList, SafeAreaView, StyleSheet, Text, Modal, Pressable, View } from 'react-native'
+import React, { useContext, useState } from 'react'
 import useFetchMeals from '../hooks/useFetchMeals';
 import { RECEIPE_URL } from "@env"
 import { ColorContext } from '../context/ThemeContext/ColorContext';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import SelectedReceipe from '../components/selectedReceipe/SelectedReceipe';
+import { useNavigation } from '@react-navigation/native';
 
 const Receipe = ({ route }) => {
 
   let { color } = useContext(ColorContext)
 
   const { id } = route.params;
-  const { data, loading, error } = useFetchMeals(`${RECEIPE_URL}${id}`)
+  const { data, loading, error } = useFetchMeals(`${RECEIPE_URL}${id}`);
+  const navigation = useNavigation()
+
+  const [modalVisible, setModalVisible] = useState(true);
 
   const styles = createStyles(color)
 
@@ -25,7 +29,7 @@ const Receipe = ({ route }) => {
 
   const meal = data[0];
 
-  const renderMeal = ({item}) => {
+  const renderMeal = ({ item }) => {
     return <SelectedReceipe meal={item} />
   }
 
@@ -33,18 +37,26 @@ const Receipe = ({ route }) => {
 
   return (
     <SafeAreaView style={styles.container} >
-      { 
-        meal ? (
-          <>
-            <FlatList 
-              data={[meal]}
-              renderItem={renderMeal}
-              keyExtractor={mealExtractor} />
-          </>
-        ) : (
-          <Text></Text>
-        )
-      }
+      <Modal
+        animationType="slide"
+        visible={modalVisible}
+        onRequestClose={() => {
+          navigation.navigate("CategoriesScreen")
+        }}>
+        {
+          meal ? (
+            <View style={styles.container} >
+              <FlatList
+                data={[meal]}
+                renderItem={renderMeal}
+                keyExtractor={mealExtractor} />
+            </View>
+          ) : (
+            <Text></Text>
+          )
+        }
+      </Modal>
+
     </SafeAreaView>
   )
 }

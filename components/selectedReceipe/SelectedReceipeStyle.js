@@ -43,14 +43,15 @@ export default function createStyles(fonts, color) {
             color: color.green
         },
         ingredientsView: {
-            width: wp(100)
+            width: wp(100),
+            padding: wp(4)
         },
         ingredientItem: {
             width: wp(95),
             height: hp(4),
             flexDirection: "row",
             alignItems: "center",
-            marginLeft: wp(4)
+            
         },
         ingredient: {
             fontFamily: fonts.edufont,
@@ -64,7 +65,7 @@ export default function createStyles(fonts, color) {
             backgroundColor: color.green
         },
         instructionView: {
-            padding: wp(1.8)
+            padding: wp(3)
         }
     })
 }

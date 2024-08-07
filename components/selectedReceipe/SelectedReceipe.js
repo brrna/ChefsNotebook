@@ -51,15 +51,15 @@ const SelectedReceipe = ({ meal }) => {
                         </View>
                     ))}
                 </View>
-                <Text style={styles.headerText} >Preparation of the Meal</Text>
                 <View style={styles.instructionView} >
+                    <Text style={styles.headerText} >Preparation of the Meal</Text>
                     <Text style={styles.ingredient} >
                         {meal.strInstructions}
                     </Text>
                 </View>
                 {
                     videoId &&
-                     (
+                    (
                         <View>
                             <YoutubePlayer videoId={videoId} />
                         </View>
