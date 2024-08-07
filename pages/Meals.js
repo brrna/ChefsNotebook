@@ -1,14 +1,21 @@
-import { SafeAreaView, StyleSheet, Text} from 'react-native'
-import React from 'react'
+import { SafeAreaView, StyleSheet } from 'react-native'
+import React, { useContext } from 'react'
 import useFetchMeals from '../hooks/useFetchMeals'
 import { RANDOM_MEAL } from "@env"
 import Loading from "../components/loading/Loading"
 import Error from "../components/error/Error"
 import NoData from '../components/noData/NoData'
+import LottieView from 'lottie-react-native'
+import { ColorContext } from '../context/ThemeContext/ColorContext'
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 
 const Meals = () => {
 
+  let {color} = useContext(ColorContext)
+
   const { data, loading, error } = useFetchMeals(`${RANDOM_MEAL}`);
+
+  const styles = createdStyle(color)
 
   if(loading){
     return <Loading />
@@ -25,9 +32,12 @@ const Meals = () => {
   const meal = data[0];
 
   return (
-    <SafeAreaView>
-      <Text>dgcdhdh</Text>
-      <Text>{meal.strMeal}</Text>
+    <SafeAreaView style={styles.container} >
+      <LottieView 
+        source={require("../assets/animations/food.json")} 
+        autoPlay 
+        loop
+        style={styles.lottie} />
     </SafeAreaView>
 
   )
@@ -35,4 +45,17 @@ const Meals = () => {
 
 export default Meals
 
-const styles = StyleSheet.create({})
+const createdStyle = (color) => {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: color.cream
+    },
+    lottie: {
+      width: wp(80),
+      height: hp(40)
+    },
+  })
+}
