@@ -44,6 +44,7 @@ const MealPart = () => {
               data={data}
               keyExtractor={keyFood}
               renderItem={renderFood}
+              showsHorizontalScrollIndicator={false}
             />
           </View>
         </View>
