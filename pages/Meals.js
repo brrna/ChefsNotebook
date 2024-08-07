@@ -8,6 +8,7 @@ import NoData from '../components/noData/NoData'
 import LottieView from 'lottie-react-native'
 import { ColorContext } from '../context/ThemeContext/ColorContext'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
+import { animations } from '../components/loading/Animations'
 
 const Meals = () => {
 
@@ -18,7 +19,7 @@ const Meals = () => {
   const styles = createdStyle(color)
 
   if(loading){
-    return <Loading />
+    return <Loading src={animations.food} />
   }
 
   if(error) {

@@ -2,8 +2,9 @@ import { useContext } from "react"
 import { SafeAreaView, StatusBar, Text } from "react-native"
 import { ColorContext } from "../../context/ThemeContext/ColorContext"
 import createStyles from "./LoadingStyle";
+import LottieView from "lottie-react-native";
 
-const Loading = () => {
+const Loading = ({src}) => {
 
     let {color} = useContext(ColorContext);
 
@@ -12,7 +13,11 @@ const Loading = () => {
     return(
         <SafeAreaView style={styles.container} >
             <StatusBar/>
-            <Text style={styles.text} >loading...</Text>
+            <LottieView 
+                style={styles.lottie}
+                loop
+                autoPlay
+                source={src} />
         </SafeAreaView>
     )
 }

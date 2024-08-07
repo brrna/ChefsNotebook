@@ -2,6 +2,7 @@ import { SafeAreaView, StatusBar, Text } from "react-native"
 import createStyles from "./ErrorStyle"
 import { useContext } from "react"
 import { ColorContext } from "../../context/ThemeContext/ColorContext"
+import LottieView from "lottie-react-native"
 
 const Error = () => {
 
@@ -12,7 +13,11 @@ const Error = () => {
     return(
         <SafeAreaView style={styles.container} >
            <StatusBar />
-           <Text style={styles.text} >error fetching data</Text> 
+           <LottieView 
+             style={styles.lottie}
+             source={require("../../assets/animations/error.json")}
+             autoPlay
+             loop />
         </SafeAreaView>
     )
 }

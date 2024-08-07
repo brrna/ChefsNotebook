@@ -8,6 +8,7 @@ import Error from '../components/error/Error'
 import { CATEGORY_URL } from "@env"
 import MyFlatlist from '../components/myFlatlist/MyFlatlist'
 import MealPart from '../components/mealPart/MealPart'
+import { animations } from '../components/loading/Animations'
 
 const Categories = () => {
 
@@ -19,7 +20,7 @@ const Categories = () => {
 
   if (loading) {
     return (
-      <Loading />
+      <Loading src={animations.select} />
     )
   }
 

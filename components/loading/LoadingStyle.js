@@ -11,6 +11,10 @@ export default function createStyles(color) {
         },
         text: {
             fontSize: hp(3)
+        },
+        lottie: {
+            height: hp(40),
+            width: wp(80)
         }
     })
 }
