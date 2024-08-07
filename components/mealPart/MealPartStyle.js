@@ -4,7 +4,7 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 export default function createStyles(color, fonts) {
     return StyleSheet.create({
         container: {
-            height: hp(62),
+            height: hp(58),
             width: wp(100),
             alignItems: "center"
         },
