@@ -33,7 +33,7 @@ const Categories = () => {
   return (
     <SafeAreaView style={styles.container} >
       <StatusBar />
-      <MyHeader />
+      <MyHeader header={"Chef's Notebook"} textColor={color.green} />
       <MyFlatlist />
       <MealPart />
     </SafeAreaView>

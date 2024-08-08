@@ -1,19 +1,17 @@
 import { View, Text } from "react-native"
 import createStyles from "./MyHeaderStyle"
 import { useContext } from "react"
-import { ColorContext } from "../../context/ThemeContext/ColorContext"
 import { FontContext } from "../../context/FontContext/FontContext"
 
-const MyHeader = () => {
+const MyHeader = ({header, textColor}) => {
 
-    let {color} = useContext(ColorContext);
     let {fonts} = useContext(FontContext);
     
-    const styles = createStyles(color, fonts)
+    const styles = createStyles(fonts, textColor);
 
     return(
         <View style={styles.container} >
-            <Text style={styles.text} >Chef's Notebook</Text>
+            <Text style={styles.text} >{header}</Text>
         </View>
     )
 }

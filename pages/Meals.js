@@ -1,14 +1,15 @@
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { SafeAreaView, StyleSheet, Image, View } from 'react-native'
 import React, { useContext } from 'react'
 import useFetchMeals from '../hooks/useFetchMeals'
 import { RANDOM_MEAL } from "@env"
 import Loading from "../components/loading/Loading"
 import Error from "../components/error/Error"
 import NoData from '../components/noData/NoData'
-import LottieView from 'lottie-react-native'
 import { ColorContext } from '../context/ThemeContext/ColorContext'
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import { animations } from '../components/loading/Animations'
+import DailyCard from '../components/dailyCard/DailyCard'
+import MyHeader from '../components/myHeader/MyHeader'
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 
 const Meals = () => {
 
@@ -34,11 +35,14 @@ const Meals = () => {
 
   return (
     <SafeAreaView style={styles.container} >
-      <LottieView 
-        source={require("../assets/animations/food.json")} 
-        autoPlay 
-        loop
-        style={styles.lottie} />
+      <MyHeader 
+        header={"Meal of the Day"}
+        textColor={color.navyBlue} />
+      <View style={styles.content} >
+      <DailyCard
+        image={meal.strMealThumb}
+        name={meal.strMeal} />
+      </View>
     </SafeAreaView>
 
   )
@@ -50,13 +54,14 @@ const createdStyle = (color) => {
   return StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: "center",
       alignItems: "center",
-      backgroundColor: color.cream
+      backgroundColor: color.white,
     },
-    lottie: {
-      width: wp(80),
-      height: hp(40)
+    content: {
+      height: hp(79.5),
+      width: wp(100),
+      justifyContent: "center",
+      alignItems: "center"
     },
   })
 }

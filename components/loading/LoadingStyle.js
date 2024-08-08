@@ -5,7 +5,7 @@ export default function createStyles(color) {
     return StyleSheet.create({
         container: {
             flex: 1,
-            backgroundColor: color.green,
+            backgroundColor: color.cream,
             justifyContent: "center",
             alignItems: "center"
         },

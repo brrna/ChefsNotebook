@@ -40,10 +40,6 @@ const Router = () => {
         tabBarShowLabel: false,
         tabBarActiveTintColor: color.cream,
         tabBarInactiveTintColor: color.cream,
-        tabBarStyle: {
-          height: hp(10),
-          backgroundColor: color.green
-        },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -57,8 +53,22 @@ const Router = () => {
           
         }
       })} >
-      <Tab.Screen name='Home' component={HomeStack} />
-      <Tab.Screen name='Meal' component={MealStack} />
+      <Tab.Screen 
+        name='Home' 
+        component={HomeStack}
+        options={{
+          tabBarStyle: {
+            backgroundColor: color.green,
+            height: hp(9.5) }
+        }} />
+      <Tab.Screen 
+        name='Meal' 
+        component={MealStack}
+        options={{
+          tabBarStyle: {
+            backgroundColor: color.navyBlue,
+            height:hp(9.5) }
+        }} />
     </Tab.Navigator>
   )
 }
