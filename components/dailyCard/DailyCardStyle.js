@@ -23,7 +23,8 @@ export default function createdStyle(color, fonts) {
         },
         text: {
             fontSize: hp(3),
-            color: color.white
+            color: color.white,
+            fontFamily: fonts.edufont
         }
     })
 }
