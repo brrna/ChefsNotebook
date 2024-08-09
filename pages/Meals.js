@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Image, View } from 'react-native'
+import { SafeAreaView, StyleSheet, View } from 'react-native'
 import React, { useContext } from 'react'
 import useFetchMeals from '../hooks/useFetchMeals'
 import { RANDOM_MEAL } from "@env"
@@ -40,6 +40,7 @@ const Meals = () => {
         textColor={color.navyBlue} />
       <View style={styles.content} >
       <DailyCard
+        meal={meal}
         image={meal.strMealThumb}
         name={meal.strMeal} />
       </View>
