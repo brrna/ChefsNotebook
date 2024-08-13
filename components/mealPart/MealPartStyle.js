@@ -21,7 +21,7 @@ export default function createStyles(color, fonts) {
         mealView: {
             backgroundColor: color.green,
             width: wp(155),
-            height: hp(58),
+            height: hp(59),
             borderTopEndRadius: wp(100),
             borderTopStartRadius: wp(100)
         },

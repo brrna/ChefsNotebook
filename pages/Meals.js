@@ -1,5 +1,5 @@
 import { SafeAreaView, StyleSheet, View } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import useFetchMeals from '../hooks/useFetchMeals'
 import { RANDOM_MEAL } from "@env"
 import Loading from "../components/loading/Loading"
@@ -10,14 +10,43 @@ import { animations } from '../components/loading/Animations'
 import DailyCard from '../components/dailyCard/DailyCard'
 import MyHeader from '../components/myHeader/MyHeader'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Meals = () => {
 
   let {color} = useContext(ColorContext)
-
   const { data, loading, error } = useFetchMeals(`${RANDOM_MEAL}`);
 
+  const [meal, setMeal] = useState(null)
+
   const styles = createdStyle(color)
+
+  useEffect(() => {
+    const fetchMealOfTheDay = async () => {
+      // Günün tarihini al
+      const today = new Date().toISOString().split('T')[0];
+      
+      // AsyncStorage'dan yemeği ve tarihi al
+      const storedMeal = await AsyncStorage.getItem('mealOfTheDay');
+      const storedDate = await AsyncStorage.getItem('mealDate');
+
+      if (storedMeal && storedDate === today) {
+        // Eğer saklanan tarih bugünkü tarih ise, saklanan yemeği kullan
+        setMeal(JSON.parse(storedMeal));
+      } else {
+        // Yeni yemek çek ve AsyncStorage'a kaydet
+        if (data && data.length > 0) {
+          const fetchedMeal = data[0];
+          setMeal(fetchedMeal);
+          await AsyncStorage.setItem('mealOfTheDay', JSON.stringify(fetchedMeal));
+          await AsyncStorage.setItem('mealDate', today);
+        }
+      }
+    };
+
+    fetchMealOfTheDay();
+  }, [data]);
+
 
   if(loading){
     return <Loading src={animations.food} />
@@ -31,8 +60,6 @@ const Meals = () => {
     return <NoData />
   }
 
-  const meal = data[0];
-
   return (
     <SafeAreaView style={styles.container} >
       <MyHeader 
@@ -40,9 +67,9 @@ const Meals = () => {
         textColor={color.navyBlue} />
       <View style={styles.content} >
       <DailyCard
-        meal={meal}
-        image={meal.strMealThumb}
-        name={meal.strMeal} />
+        meal={data[0]}
+        image={data[0].strMealThumb}
+        name={data[0].strMeal} />
       </View>
     </SafeAreaView>
 

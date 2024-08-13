@@ -12,7 +12,7 @@ const DayModal = ({ src, meal }) => {
     let { fonts } = useContext(FontContext)
 
     const styles = createdStyle(color, imageHeight, marginTop, fonts);
-    const videoId = meal.strYoutube.split('v=')[1]?.split('&')[0];
+    const videoId = meal.strYoutube ? meal.strYoutube.split('v=')[1]?.split('&')[0] : null;
 
     const [imageHeight, setImageHeight] = useState(hp(53))
     const [marginTop, setMarginTop] = useState(hp(10))

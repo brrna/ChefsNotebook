@@ -18,13 +18,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo.jpeg",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.brrna.ChefsNotebook"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1d446e7f-3e9d-418d-acf7-f86a8e8085c6"
+      }
+    }
   }
 }
