@@ -8,6 +8,8 @@ import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { ColorContext } from '../../context/ThemeContext/ColorContext';
+import Profile from '../Profile';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 const Router = () => {
 
@@ -33,6 +35,14 @@ const Router = () => {
     )
   }
 
+  function ProfileStack() {
+    return(
+      <Stack.Navigator screenOptions={{headerShown: false}} >
+        <Stack.Screen name='ProfileScreen' component={Profile} />
+      </Stack.Navigator>
+    )
+  }
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -49,6 +59,9 @@ const Router = () => {
           } else if (route.name === 'Meal') {
             iconName = focused ? 'food-takeout-box' : 'food-takeout-box-outline'
             return <MaterialCommunityIcons name={iconName} size={size} color={color} />
+          } else if (route.name === 'Profile') {
+            iconName = focused ? 'user-circle' : 'user-circle-o'
+            return <FontAwesome name={iconName} size={size} color={color} /> 
           }
           
         }
@@ -67,6 +80,14 @@ const Router = () => {
         options={{
           tabBarStyle: {
             backgroundColor: color.navyBlue,
+            height:hp(9.5) }
+        }} />
+        <Tab.Screen 
+        name='Profile' 
+        component={ProfileStack}
+        options={{
+          tabBarStyle: {
+            backgroundColor: color.darkGreen,
             height:hp(9.5) }
         }} />
     </Tab.Navigator>
