@@ -1,13 +1,13 @@
 import { FlatList, SafeAreaView, StyleSheet, View } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
-import { ColorContext } from '../context/ThemeContext/ColorContext'
 import option from "../assets/values/profile_options.json"
 import ProfileOption from '../components/profileOption/ProfileOption'
+import { useSelector } from 'react-redux'
 
 const Profile = () => {
 
-    let { color } = useContext(ColorContext);
+    const color = useSelector((state) => state.color )
 
     const styles = createStyles(color);
 

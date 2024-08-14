@@ -1,16 +1,16 @@
 import { FlatList, View } from 'react-native'
 import React, { useContext } from 'react'
-import { ColorContext } from '../../context/ThemeContext/ColorContext'
 import createStyle from './MyFlatlistStyle';
 import useFetchCategories from '../../hooks/useFetchCategories';
 import { CATEGORY_URL } from "@env"
 import MealOption from '../mealOption/MealOption';
 import { icons } from './Icons';
 import { MealContext } from '../../context/MealContext/MealContext';
+import { useSelector } from 'react-redux';
 
 const MyFlatlist = () => {
 
-  let { color } = useContext(ColorContext);
+  const color = useSelector((state) => state.color)
   const { setSelectedCategory } = useContext(MealContext)
   const styles = createStyle(color);
 

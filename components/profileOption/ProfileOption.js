@@ -1,14 +1,14 @@
 import { Pressable, Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import createStyles from './ProfileOptionStyle'
-import { ColorContext } from '../../context/ThemeContext/ColorContext'
 import {FontContext} from "../../context/FontContext/FontContext"
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { heightPercentageToDP } from 'react-native-responsive-screen';
+import { useSelector } from 'react-redux'
 
 const ProfileOption = ({option, onPress = [0]}) => {
 
-    let { color } = useContext(ColorContext);
+    const color = useSelector((state) => state.color)
     let {fonts} = useContext(FontContext)
 
     const styles = createStyles(color, fonts)

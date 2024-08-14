@@ -1,11 +1,11 @@
 import { SafeAreaView, Text } from 'react-native'
-import React, { useContext } from 'react'
-import { ColorContext } from '../../context/ThemeContext/ColorContext'
+import React from 'react'
 import createdStyle from './NoDataStyle';
+import { useSelector } from 'react-redux';
 
 const NoData = () => {
 
-    let {color} = useContext(ColorContext);
+    const color = useSelector((state) => state.color)
     
     const styles = createdStyle(color)
 

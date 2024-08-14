@@ -1,12 +1,11 @@
-import { SafeAreaView, StatusBar, Text } from "react-native"
+import { SafeAreaView, StatusBar } from "react-native"
 import createStyles from "./ErrorStyle"
-import { useContext } from "react"
-import { ColorContext } from "../../context/ThemeContext/ColorContext"
 import LottieView from "lottie-react-native"
+import { useSelector } from "react-redux"
 
 const Error = () => {
 
-    let { color } = useContext(ColorContext)
+    const color = useSelector((state) => state.color)
 
     const styles = createStyles(color)
 

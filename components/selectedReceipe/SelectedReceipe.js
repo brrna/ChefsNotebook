@@ -3,14 +3,13 @@ import React, { useContext } from 'react'
 import createStyles from './SelectedReceipeStyle';
 import MyBackHeader from '../myBackHeader/MyBackHeader';
 import { FontContext } from "../../context/FontContext/FontContext"
-import { ColorContext } from '../../context/ThemeContext/ColorContext';
 import { useNavigation } from '@react-navigation/native';
 import YoutubePlayer from '../youtube/YoutubePlayer';
 
 const SelectedReceipe = ({ meal }) => {
 
     let { fonts } = useContext(FontContext)
-    let { color } = useContext(ColorContext)
+    const color = ((state) => state.color)
 
     const styles = createStyles(fonts, color);
     const navigation = useNavigation();

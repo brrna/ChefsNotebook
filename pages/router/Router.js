@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Categories from '../Categories';
 import Receipe from '../Receipe';
@@ -7,13 +7,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import { ColorContext } from '../../context/ThemeContext/ColorContext';
 import Profile from '../Profile';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { useSelector } from 'react-redux';
 
 const Router = () => {
 
-  let {color} = useContext(ColorContext)
+  const color = useSelector((state) => state.color)
 
   const Stack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();

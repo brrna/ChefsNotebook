@@ -1,14 +1,14 @@
 import { ScrollView, Image, View, SafeAreaView, Text } from 'react-native'
 import React, { useContext, useState } from 'react'
 import createdStyle from './DayModalStyle'
-import { ColorContext } from '../../context/ThemeContext/ColorContext'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import { FontContext } from '../../context/FontContext/FontContext'
 import YoutubePlayer from '../youtube/YoutubePlayer'
+import { useSelector } from 'react-redux'
 
 const DayModal = ({ src, meal }) => {
 
-    let { color } = useContext(ColorContext);
+    const color = useSelector((state) => state.color)
     let { fonts } = useContext(FontContext)
 
     const styles = createdStyle(color, imageHeight, marginTop, fonts);
@@ -20,7 +20,6 @@ const DayModal = ({ src, meal }) => {
     const handleScroll = (event) => {
         const scrollY = event.nativeEvent.contentOffset.y;
         const newHeight = hp(55) - scrollY;
-        const newMarginTop = hp(20) - scrollY / 2;
 
         if (newHeight >= hp(35)) {
             setImageHeight(newHeight)

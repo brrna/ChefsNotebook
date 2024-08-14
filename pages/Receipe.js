@@ -1,15 +1,15 @@
 import { FlatList, SafeAreaView, StyleSheet, Text, Modal, Pressable, View } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import useFetchMeals from '../hooks/useFetchMeals';
 import { RECEIPE_URL } from "@env"
-import { ColorContext } from '../context/ThemeContext/ColorContext';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import SelectedReceipe from '../components/selectedReceipe/SelectedReceipe';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 
 const Receipe = ({ route }) => {
 
-  let { color } = useContext(ColorContext)
+  const color = useSelector((state) => state.color )
 
   const { id } = route.params;
   const { data, loading, error } = useFetchMeals(`${RECEIPE_URL}${id}`);

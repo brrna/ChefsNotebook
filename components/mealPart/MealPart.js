@@ -1,6 +1,5 @@
 import { Text, View, FlatList } from 'react-native'
 import React, { useContext } from 'react'
-import { ColorContext } from '../../context/ThemeContext/ColorContext'
 import createStyles from './MealPartStyle'
 import { MealContext } from '../../context/MealContext/MealContext'
 import { FontContext } from '../../context/FontContext/FontContext'
@@ -8,10 +7,11 @@ import useFetchMeals from '../../hooks/useFetchMeals'
 import { MEAL_URL } from '@env'
 import FoodChoice from '../foodChoice/FoodChoice'
 import { useNavigation } from '@react-navigation/native'
+import { useSelector } from 'react-redux'
 
 const MealPart = () => {
 
-  let { color } = useContext(ColorContext);
+  const color = useSelector((state) => state.color)
   let { selectedCategory } = useContext(MealContext);
   let { fonts } = useContext(FontContext);
 

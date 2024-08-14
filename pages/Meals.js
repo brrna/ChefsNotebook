@@ -1,20 +1,21 @@
 import { SafeAreaView, StyleSheet, View } from 'react-native'
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import useFetchMeals from '../hooks/useFetchMeals'
 import { RANDOM_MEAL } from "@env"
 import Loading from "../components/loading/Loading"
 import Error from "../components/error/Error"
 import NoData from '../components/noData/NoData'
-import { ColorContext } from '../context/ThemeContext/ColorContext'
 import { animations } from '../components/loading/Animations'
 import DailyCard from '../components/dailyCard/DailyCard'
 import MyHeader from '../components/myHeader/MyHeader'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import useFetchMealOfTheDay from '../hooks/useFetchMealOfTheDay'
+import { useSelector } from 'react-redux'
 
 const Meals = () => {
 
-  let {color} = useContext(ColorContext)
+  const color = useSelector((state) => state.color)
+
   const { data, loading, error } = useFetchMeals(`${RANDOM_MEAL}`);
 
   const meal = useFetchMealOfTheDay(data);

@@ -1,12 +1,12 @@
 import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
-import { ColorContext } from '../context/ThemeContext/ColorContext';
 import { FontContext } from '../context/FontContext/FontContext';
+import { useSelector } from 'react-redux';
 
 const Splash = () => {
 
-  let { color } = useContext(ColorContext);
+  const color = useSelector((state) => state.color )
   let { fonts } = useContext(FontContext)
 
   const styles = createStyles(color, fonts);

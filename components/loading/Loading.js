@@ -3,10 +3,11 @@ import { SafeAreaView, StatusBar, Text } from "react-native"
 import { ColorContext } from "../../context/ThemeContext/ColorContext"
 import createStyles from "./LoadingStyle";
 import LottieView from "lottie-react-native";
+import { useSelector } from "react-redux";
 
 const Loading = ({src}) => {
 
-    let {color} = useContext(ColorContext);
+    const color = useSelector((state) => state.color)
 
     const styles = createStyles(color);
 
