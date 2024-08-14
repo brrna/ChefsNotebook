@@ -5,13 +5,13 @@ export default function createdStyle(color, height, marginTop, fonts) {
     return StyleSheet.create({
         container: {
             flex: 1,
-            backgroundColor: color.cream,
+            backgroundColor: color.white,
         },
         scrollview: {
-            backgroundColor: color.cream,
+            backgroundColor: color.white,
         },
         imageView: {
-            backgroundColor: color.cream,
+            backgroundColor: color.white,
             height: height,
         },
         imageTopView: {
@@ -57,7 +57,7 @@ export default function createdStyle(color, height, marginTop, fonts) {
         },
         ingredient: {
             fontFamily: fonts.edufont,
-            color: color.cream,
+            color: color.white,
             fontSize: hp(2.5)
         },
         item: {
