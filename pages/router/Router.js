@@ -60,7 +60,7 @@ const Router = () => {
             iconName = focused ? 'food-takeout-box' : 'food-takeout-box-outline'
             return <MaterialCommunityIcons name={iconName} size={size} color={color} />
           } else if (route.name === 'Profile') {
-            iconName = focused ? 'user-circle' : 'user-circle-o'
+            iconName = focused ? 'user-circle' : 'user-o'
             return <FontAwesome name={iconName} size={size} color={color} /> 
           }
           

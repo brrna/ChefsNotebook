@@ -1,0 +1,12 @@
+[
+    {
+        "id": 0,
+        "text": "my notebook",
+        "icon": "notebook-outline"
+    },
+    {
+        "id": 1,
+        "text": "my favorite receipes",
+        "icon": "cards-playing-heart"
+    }
+]
