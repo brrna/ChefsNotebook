@@ -45,7 +45,7 @@ const Meals = () => {
     };
 
     fetchMealOfTheDay();
-  }, [data]);
+  }, []);
 
 
   if(loading){
@@ -67,9 +67,9 @@ const Meals = () => {
         textColor={color.navyBlue} />
       <View style={styles.content} >
       <DailyCard
-        meal={data[0]}
-        image={data[0].strMealThumb}
-        name={data[0].strMeal} />
+        meal={meal}
+        image={meal.strMealThumb}
+        name={meal.strMeal} />
       </View>
     </SafeAreaView>
 
