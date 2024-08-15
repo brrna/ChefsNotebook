@@ -21,7 +21,7 @@ export const useFontsLoaded = () => {
             dispatch(setFonts());
             dispatch(setFontsLoaded(true));
         }
-    }, [fontsLoaded, setFontsLoaded]);
+    }, [fontsLoaded, dispatch]);
 
     return fontsLoaded;
 }
