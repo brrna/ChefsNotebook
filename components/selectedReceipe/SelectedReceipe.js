@@ -1,14 +1,14 @@
 import { ScrollView, View, Text, Image } from 'react-native'
-import React, { useContext } from 'react'
+import React from 'react'
 import createStyles from './SelectedReceipeStyle';
 import MyBackHeader from '../myBackHeader/MyBackHeader';
-import { FontContext } from "../../context/FontContext/FontContext"
 import { useNavigation } from '@react-navigation/native';
 import YoutubePlayer from '../youtube/YoutubePlayer';
+import { useSelector } from 'react-redux';
 
 const SelectedReceipe = ({ meal }) => {
 
-    let { fonts } = useContext(FontContext)
+    const fonts = useSelector((state)=> state.fonts.fonts)
     const color = ((state) => state.color)
 
     const styles = createStyles(fonts, color);

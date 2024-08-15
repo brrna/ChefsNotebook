@@ -1,13 +1,12 @@
 import { View, Text, Image, Pressable } from 'react-native'
 import React, { useContext } from 'react'
 import createStyles from './FoodChoiceStyle'
-import { FontContext } from '../../context/FontContext/FontContext'
 import { useSelector } from 'react-redux'
 
 const FoodChoice = ({ img, foodname, onPress }) => {
 
     const color = useSelector((state) => state.color)
-    let { fonts } = useContext(FontContext);
+    const fonts = useSelector((state)=>state.fonts.fonts)
 
     const styles = createStyles(color, fonts);
 

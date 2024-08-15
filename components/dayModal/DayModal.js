@@ -2,14 +2,13 @@ import { ScrollView, Image, View, SafeAreaView, Text } from 'react-native'
 import React, { useContext, useState } from 'react'
 import createdStyle from './DayModalStyle'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
-import { FontContext } from '../../context/FontContext/FontContext'
 import YoutubePlayer from '../youtube/YoutubePlayer'
 import { useSelector } from 'react-redux'
 
 const DayModal = ({ src, meal }) => {
 
     const color = useSelector((state) => state.color)
-    let { fonts } = useContext(FontContext)
+    const fonts = useSelector((state) => state.fonts.fonts)
 
     const styles = createdStyle(color, imageHeight, marginTop, fonts);
     const videoId = meal.strYoutube ? meal.strYoutube.split('v=')[1]?.split('&')[0] : null;

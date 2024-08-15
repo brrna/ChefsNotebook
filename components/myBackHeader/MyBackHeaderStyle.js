@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 
-export default function createStyles(fonts) {
+export default function createStyles() {
     return StyleSheet.create({
         container: {
             position: "absolute",

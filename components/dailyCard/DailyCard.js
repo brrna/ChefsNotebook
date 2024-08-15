@@ -1,7 +1,6 @@
 import { Text, View, Image, Pressable, SafeAreaView, Modal } from 'react-native'
 import React, { useContext, useState } from 'react'
 import createdStyle from './DailyCardStyle'
-import { FontContext } from '../../context/FontContext/FontContext'
 import DayModal from '../dayModal/DayModal'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux'
@@ -9,7 +8,7 @@ import { useSelector } from 'react-redux'
 const DailyCard = ({ image, name, meal }) => {
 
   const color = useSelector((state) => state.color)
-  let { fonts } = useContext(FontContext);
+  const fonts = useSelector((state) => state.fonts.fonts)
 
   const styles = createdStyle(color, fonts);
   const navigation = useNavigation()

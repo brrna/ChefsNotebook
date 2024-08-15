@@ -3,9 +3,11 @@ import React from 'react'
 import createStyles from './MyBackHeaderStyle'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { color } from '../../context/ThemeContext/Colors';
+import { useSelector } from 'react-redux';
 
 const MyBackHeader = ({ onPress }) => {
+
+    const color = useSelector((state) => state.color)
 
     const styles = createStyles();
 

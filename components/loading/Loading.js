@@ -1,6 +1,4 @@
-import { useContext } from "react"
-import { SafeAreaView, StatusBar, Text } from "react-native"
-import { ColorContext } from "../../context/ThemeContext/ColorContext"
+import { SafeAreaView, StatusBar } from "react-native"
 import createStyles from "./LoadingStyle";
 import LottieView from "lottie-react-native";
 import { useSelector } from "react-redux";
