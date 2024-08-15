@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 const SelectedReceipe = ({ meal }) => {
 
     const fonts = useSelector((state)=> state.fonts.fonts)
-    const color = ((state) => state.color)
+    const color = useSelector((state) => state.color)
 
     const styles = createStyles(fonts, color);
     const navigation = useNavigation();

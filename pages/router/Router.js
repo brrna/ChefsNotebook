@@ -10,6 +10,8 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Profile from '../Profile';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { useSelector } from 'react-redux';
+import SignIn from '../SignIn';
+import SignUp from '../SignUp';
 
 const Router = () => {
 
@@ -43,8 +45,8 @@ const Router = () => {
     )
   }
 
-  return (
-    <Tab.Navigator
+  function TabNavigator() {
+    return(<Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarShowLabel: false,
@@ -90,7 +92,15 @@ const Router = () => {
             backgroundColor: color.darkGreen,
             height:hp(9.5) }
         }} />
-    </Tab.Navigator>
+    </Tab.Navigator>)
+  }
+
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}} >
+      <Stack.Screen name='SignIn' component={SignIn} />
+      <Stack.Screen name='SıgnUp' component={SignUp} />
+      <Stack.Screen name='Main' component={TabNavigator} />
+    </Stack.Navigator>
   )
 }
 

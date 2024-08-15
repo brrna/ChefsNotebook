@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
-import React, { useContext } from 'react'
+import React from 'react'
 import WebView from 'react-native-webview'
 import createdStyle from './YoutubePlayerStyle'
 import { useSelector } from 'react-redux'
 
 const YoutubePlayer = ({ videoId }) => {
 
-    const fonts = useSelector((state) => state.fonts)
+    const fonts = useSelector((state) => state.fonts.fonts)
     const color = useSelector((state) => state.color )
 
     const styles = createdStyle(fonts, color)

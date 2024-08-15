@@ -1,25 +1,29 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, SafeAreaView, StatusBar, StyleSheet, View, Text } from 'react-native'
 import React from 'react'
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import { useSelector } from 'react-redux';
 
 const Splash = () => {
 
-  const color = useSelector((state) => state.color )
+  const color = useSelector((state) => state.color)
   const fonts = useSelector((state) => state.fonts.fonts)
 
-  const styles = createStyles(color, fonts);
+  const styles = createStyles(color, fonts)
+
+  const image = require("../assets/images/splash.jpeg")
 
   return (
     <SafeAreaView style={styles.container} >
-      <View style={styles.view} >
-        <Image
-          style={styles.image}
-          source={require("../assets/images/logo.jpeg")} />
-        <Text style={styles.text}>
-          chef's notebook
-        </Text>
-      </View>
+      <StatusBar />
+      <ImageBackground 
+        resizeMode="cover"
+        style={styles.image}
+        source={image}
+        blurRadius={5} >
+          <View style={styles.view} >
+            <Text style={styles.text} >chef's notebook</Text>
+          </View>
+        </ImageBackground>
     </SafeAreaView>
   )
 }
@@ -30,21 +34,26 @@ const createStyles = (color, fonts) => {
   return StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: color.green,
+      backgroundColor: "red",
       justifyContent: "center",
       alignItems: "center"
     },
-    view: {
-      marginBottom: hp(10)
-    },
     image: {
-      height: hp(40),
-      width: wp(60)
+      height: hp(100),
+      width: wp(100),
+    },
+    view: {
+      backgroundColor: "rgba(0, 0, 0, 0.2)",
+      height: hp(100),
+      width: wp(100),
+      justifyContent: "center",
+      alignItems: "center",
     },
     text: {
+      color: color.navyBlue,
       fontFamily: fonts.handwrite,
-      fontSize: hp(6),
-      color: color.cream
+      fontSize: hp(8),
+      marginBottom: hp(40)
     }
   })
 }
