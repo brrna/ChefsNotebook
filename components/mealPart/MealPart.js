@@ -1,7 +1,6 @@
 import { Text, View, FlatList } from 'react-native'
-import React, { useContext } from 'react'
+import React from 'react'
 import createStyles from './MealPartStyle'
-import { MealContext } from '../../context/MealContext/MealContext'
 import useFetchMeals from '../../hooks/useFetchMeals'
 import { MEAL_URL } from '@env'
 import FoodChoice from '../foodChoice/FoodChoice'
@@ -12,8 +11,7 @@ const MealPart = () => {
 
   const color = useSelector((state) => state.color);
   const fonts = useSelector((state) => state.fonts.fonts);
-  let { selectedCategory } = useContext(MealContext);
- 
+  const selectedCategory = useSelector((state) => state.meal.selectedCategory)
 
   const styles = createStyles(color, fonts);
   const { data } = useFetchMeals(`${MEAL_URL}${selectedCategory?.strCategory}`);

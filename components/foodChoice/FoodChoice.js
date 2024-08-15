@@ -1,5 +1,5 @@
 import { View, Text, Image, Pressable } from 'react-native'
-import React, { useContext } from 'react'
+import React from 'react'
 import createStyles from './FoodChoiceStyle'
 import { useSelector } from 'react-redux'
 
