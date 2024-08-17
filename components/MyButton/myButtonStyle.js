@@ -26,7 +26,7 @@ export default function createStyles(color, fonts) {
         buttonText:{
             fontFamily: fonts.edufont,
             fontSize: hp(2.5),
-            color: color.darkGreen
+            color: color.cream
         }
     })
 }

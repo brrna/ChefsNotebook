@@ -17,7 +17,7 @@ const MyInput = ({placeholder, onPress}) => {
             onPress={onPress}
             style={styles.inputText}
             placeholder={placeholder}
-            placeholderTextColor={color.darkGreen} />
+            placeholderTextColor={color.cream} />
       </View>
     </View>
   )
