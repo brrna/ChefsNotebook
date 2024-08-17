@@ -98,7 +98,7 @@ const Router = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}} >
       <Stack.Screen name='SignIn' component={SignIn} />
-      <Stack.Screen name='SıgnUp' component={SignUp} />
+      <Stack.Screen name='SignUp' component={SignUp} />
       <Stack.Screen name='Main' component={TabNavigator} />
     </Stack.Navigator>
   )

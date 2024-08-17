@@ -19,11 +19,9 @@ export default function App() {
   return (
     <Provider store={store} >
       <FontLoader>
-      
         <NavigationContainer>
           {splash ? <Splash /> : <Router />}
         </NavigationContainer>
-     
       </FontLoader>
     </Provider>
   );

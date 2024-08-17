@@ -5,12 +5,12 @@ import { useSelector } from 'react-redux';
 
 const Splash = () => {
 
+  const image = require("../assets/images/splash.jpeg")
+
   const color = useSelector((state) => state.color)
   const fonts = useSelector((state) => state.fonts.fonts)
 
   const styles = createStyles(color, fonts)
-
-  const image = require("../assets/images/splash.jpeg")
 
   return (
     <SafeAreaView style={styles.container} >
@@ -34,7 +34,6 @@ const createStyles = (color, fonts) => {
   return StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "red",
       justifyContent: "center",
       alignItems: "center"
     },
