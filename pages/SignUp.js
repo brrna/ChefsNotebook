@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import MyInput from '../components/myInput/MyInput';
 import MyButton from '../components/MyButton/myButton';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const SignUp = () => {
 
@@ -12,28 +13,30 @@ const SignUp = () => {
   const styles = createStyles(color)
 
   return (
-    <SafeAreaView
-      style={styles.container}>
-      <View style={styles.view} >
-        <MyInput placeholder={"first name"} />
+    <KeyboardAwareScrollView
+      style={styles.content}>
+      <View style={styles.container} >
+        <View style={styles.view} >
+          <MyInput placeholder={"first name"} />
+        </View>
+        <View style={styles.view} >
+          <MyInput placeholder={"last name"} />
+        </View>
+        <View style={styles.view} >
+          <MyInput placeholder={"username"} />
+        </View>
+        <View style={styles.view} >
+          <MyInput placeholder={"email"} keyboardType={"email-address"} />
+        </View>
+        <View style={styles.view} >
+          <MyInput placeholder={"password"} />
+        </View>
+        <View style={styles.view} >
+          <MyInput placeholder={"password repeat"} />
+        </View>
+        <MyButton buttonText={"sign up"} />
       </View>
-      <View style={styles.view} >
-        <MyInput placeholder={"last name"} />
-      </View>
-      <View style={styles.view} >
-        <MyInput placeholder={"username"} />
-      </View>
-      <View style={styles.view} >
-        <MyInput placeholder={"email"} />
-      </View>
-      <View style={styles.view} >
-        <MyInput placeholder={"password"} />
-      </View>
-      <View style={styles.view} >
-        <MyInput placeholder={"password repeat"} />
-      </View>
-      <MyButton buttonText={"sign up"} />
-    </SafeAreaView>
+    </KeyboardAwareScrollView>
   )
 }
 
@@ -41,10 +44,13 @@ export default SignUp
 
 const createStyles = (color) => {
   return StyleSheet.create({
+    content: {
+      flexGrow: 1
+    },
     container: {
-      flex: 1,
       backgroundColor: color.darkGreen,
       alignItems: "center",
+      height: hp(100)
     },
     view: {
       width: wp(100),

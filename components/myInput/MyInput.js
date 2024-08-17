@@ -3,7 +3,7 @@ import React from 'react'
 import createStyles from './MyInputStyle'
 import { useSelector } from 'react-redux'
 
-const MyInput = ({placeholder, onPress}) => {
+const MyInput = ({placeholder, value, onChangeText, keyboardType}) => {
 
     const color = useSelector((state) => state.color);
     const fonts = useSelector((state) => state.fonts.fonts)
@@ -14,10 +14,12 @@ const MyInput = ({placeholder, onPress}) => {
     <View style={styles.container} >
       <View style={styles.inputView} >
         <TextInput 
-            onPress={onPress}
+            value={value}
+            onChangeText={onChangeText}
             style={styles.inputText}
             placeholder={placeholder}
-            placeholderTextColor={color.cream} />
+            placeholderTextColor={color.cream}
+            keyboardType={keyboardType} />
       </View>
     </View>
   )

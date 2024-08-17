@@ -5,6 +5,7 @@ import MyInput from '../components/myInput/MyInput';
 import MyButton from '../components/MyButton/myButton';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import { useNavigation } from '@react-navigation/native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const SignIn = () => {
 
@@ -19,7 +20,8 @@ const SignIn = () => {
   }
 
   return (
-    <SafeAreaView style={styles.container} >
+    <KeyboardAwareScrollView contentContainerStyle={styles.content} >
+      <View style={styles.container} >
       <View style={styles.imageView} >
         <Image
           source={require("../assets/images/logo.jpeg")}
@@ -30,7 +32,8 @@ const SignIn = () => {
       <MyInput placeholder={"password"} />
       <MyButton buttonText={"sign in"} />
       <MyButton text={"or"} buttonText={"sign up"} onPress={pressSignUp} />
-    </SafeAreaView>
+      </View>
+    </KeyboardAwareScrollView>
   )
 }
 
@@ -38,6 +41,10 @@ export default SignIn
 
 const createStyles = (color, fonts) => {
   return StyleSheet.create({
+    content: {
+      flexGrow: 1,
+      justifyContent: "center"
+    },
     container: {
       flex: 1,
       backgroundColor: color.green,
