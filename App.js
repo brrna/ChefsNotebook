@@ -1,27 +1,14 @@
-import { NavigationContainer } from '@react-navigation/native';
-import Router from './pages/router/Router';
-import { useEffect, useState } from 'react';
-import Splash from "./pages/Splash"
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { useFontsLoaded } from './hooks/useFontsLoaded';
+import RootNavigation from './navigation/RootNavigation';
 
 export default function App() {
-
-  const [splash, setSplash] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setSplash(false)
-    }, 3000)
-  }, [])
 
   return (
     <Provider store={store} >
       <FontLoader>
-        <NavigationContainer>
-          {splash ? <Splash /> : <Router />}
-        </NavigationContainer>
+        <RootNavigation />
       </FontLoader>
     </Provider>
   );
@@ -30,7 +17,7 @@ export default function App() {
 const FontLoader = ({ children }) => {
   const fontsLoaded = useFontsLoaded()
 
-  if(!fontsLoaded) {
+  if (!fontsLoaded) {
     return null
   }
 

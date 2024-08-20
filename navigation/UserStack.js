@@ -1,52 +1,50 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Categories from '../Categories';
-import Receipe from '../Receipe';
-import Meals from "../Meals"
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Categories from "../pages/Categories"
+import Receipe from "../pages/Receipe"
+import Meals from "../pages/Meals" 
+import Profile from "../pages/Profile"
+import { useSelector } from 'react-redux'
+import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import Profile from '../Profile';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { useSelector } from 'react-redux';
-import SignIn from '../SignIn';
-import SignUp from '../SignUp';
 
-const Router = () => {
+const UserStack = () => {
 
-  const color = useSelector((state) => state.color)
+    const Stack = createNativeStackNavigator();
+    const Tab = createBottomTabNavigator();
 
-  const Stack = createNativeStackNavigator();
-  const Tab = createBottomTabNavigator();
+    const color = useSelector((state) => state.color)
 
-  function HomeStack() {
-    return (
-      <Stack.Navigator screenOptions={{ headerShown: false }} >
-        <Stack.Screen name='CategoriesScreen' component={Categories} />
-        <Stack.Screen name='ReceipeScreen' component={Receipe} />
-      </Stack.Navigator>
-    )
-  }
+    function HomeStack() {
+        return(
+            <Stack.Navigator screenOptions={{headerShown: false}} >
+                <Stack.Screen name='CategoriesScreen' component={Categories} />
+                <Stack.Screen name='ReceipeScreen' component={Receipe} />
+            </Stack.Navigator>
+        )
+    }
 
-  function MealStack() {
-    return (
-      <Stack.Navigator screenOptions={{ headerShown: false }} >
-        <Stack.Screen name='MealsScreen' component={Meals} />
-      </Stack.Navigator>
-    )
-  }
+    function MealStack() {
+        return(
+            <Stack.Navigator>
+                <Stack.Screen name='MealsScreen' component={Meals} />
+            </Stack.Navigator>
+        )
+    }
 
-  function ProfileStack() {
-    return(
-      <Stack.Navigator screenOptions={{headerShown: false}} >
-        <Stack.Screen name='ProfileScreen' component={Profile} />
-      </Stack.Navigator>
-    )
-  }
+    function ProfileStack() {
+        return(
+            <Stack.Navigator>
+                <Stack.Screen name='ProfileScreen' component={Profile} />
+            </Stack.Navigator>
+        )
+    }
 
-  function TabNavigator() {
-    return(<Tab.Navigator
+  return (
+    <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarShowLabel: false,
@@ -92,16 +90,8 @@ const Router = () => {
             backgroundColor: color.darkGreen,
             height:hp(9.5) }
         }} />
-    </Tab.Navigator>)
-  }
-
-  return (
-    <Stack.Navigator screenOptions={{headerShown: false}} >
-      <Stack.Screen name='SignIn' component={SignIn} />
-      <Stack.Screen name='SignUp' component={SignUp} />
-      <Stack.Screen name='Main' component={TabNavigator} />
-    </Stack.Navigator>
+    </Tab.Navigator>
   )
 }
 
-export default Router
+export default UserStack

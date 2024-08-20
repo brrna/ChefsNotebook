@@ -1,4 +1,4 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import MyInput from '../components/myInput/MyInput';
