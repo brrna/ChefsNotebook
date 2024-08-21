@@ -3,7 +3,9 @@ import React from 'react'
 import createStyles from './MyInputStyle'
 import { useSelector } from 'react-redux'
 
-const MyInput = ({placeholder, value, onChangeText, keyboardType}) => {
+const MyInput = (props) => {
+
+  const {value, onChangeText, placeholder, keyboardType, secureTextEntry, inputMode} = props;
 
     const color = useSelector((state) => state.color);
     const fonts = useSelector((state) => state.fonts.fonts)
@@ -19,7 +21,9 @@ const MyInput = ({placeholder, value, onChangeText, keyboardType}) => {
             style={styles.inputText}
             placeholder={placeholder}
             placeholderTextColor={color.cream}
-            keyboardType={keyboardType} />
+            keyboardType={keyboardType}
+            secureTextEntry={secureTextEntry}
+            inputMode={inputMode} />
       </View>
     </View>
   )
