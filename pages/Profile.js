@@ -4,12 +4,13 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-nat
 import option from "../assets/values/profile_options.json"
 import ProfileOption from '../components/profileOption/ProfileOption'
 import { useSelector } from 'react-redux'
+import { useNavigation } from '@react-navigation/native'
 
 const Profile = () => {
 
     const color = useSelector((state) => state.color )
-
     const styles = createStyles(color);
+    const navigation = useNavigation();
 
     const [data, setData] = useState(option);
     const renderOption = ({ item }) => <ProfileOption option={item} onPress={() => handlePress(item.id)} />
@@ -18,7 +19,7 @@ const Profile = () => {
     const handlePress = (id) => {
         switch (id) {
             case 0:
-                console.log("add notebook");
+                navigation.navigate("Notebook");
                 break;
             case 1:
                 console.log("add favorite");

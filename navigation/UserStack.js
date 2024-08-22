@@ -10,6 +10,7 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-nat
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import Notebook from '../pages/Notebook'
 
 const UserStack = () => {
 
@@ -29,7 +30,7 @@ const UserStack = () => {
 
     function MealStack() {
         return(
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{headerShown: false}} >
                 <Stack.Screen name='MealsScreen' component={Meals} />
             </Stack.Navigator>
         )
@@ -37,8 +38,9 @@ const UserStack = () => {
 
     function ProfileStack() {
         return(
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{headerShown: false}} >
                 <Stack.Screen name='ProfileScreen' component={Profile} />
+                <Stack.Screen name='Notebook' component={Notebook} />
             </Stack.Navigator>
         )
     }
