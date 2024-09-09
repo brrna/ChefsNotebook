@@ -1,4 +1,3 @@
-import { useContext } from "react"
 import { View, Image, Pressable } from "react-native"
 import createStyle from "./MealOptionStyle";
 import { useSelector } from "react-redux";

@@ -17,6 +17,8 @@ const MealPart = () => {
   const { data } = useFetchMeals(`${MEAL_URL}${selectedCategory?.strCategory}`);
   const navigation = useNavigation();
 
+  console.log(`${MEAL_URL}${selectedCategory?.strCategory}`)
+
   const handlePress = (id) => {
     navigation.navigate('ReceipeScreen', {id})
   }

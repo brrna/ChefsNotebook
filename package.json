@@ -21,7 +21,7 @@
     "@types/react": "~18.2.79",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
-    "expo": "^51.0.26",
+    "expo": "^51.0.32",
     "expo-font": "~12.0.9",
     "expo-status-bar": "~1.12.1",
     "firebase": "^10.13.0",

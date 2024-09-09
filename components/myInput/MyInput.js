@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { TextInput, View } from 'react-native'
 import React from 'react'
 import createStyles from './MyInputStyle'
 import { useSelector } from 'react-redux'

@@ -18,7 +18,7 @@ const MyFlatlist = () => {
     dispatch(setSelectedCategory(meal))
   };
 
-  const { data } = useFetchCategories(CATEGORY_URL)
+  const { data } = useFetchCategories(`${CATEGORY_URL}`)
   const renderMeals = ({ item, index }) => (
     <MealOption
       option={item.strCategory}

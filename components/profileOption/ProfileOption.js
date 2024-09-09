@@ -1,5 +1,5 @@
 import { Pressable, Text, View } from 'react-native'
-import React, { useContext } from 'react'
+import React from 'react'
 import createStyles from './ProfileOptionStyle'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { heightPercentageToDP } from 'react-native-responsive-screen';

@@ -13,7 +13,7 @@ function useFetchCategories(url) {
             const response = await axios.get(url);
             setData(response.data.categories)
         } catch (err) {
-            console.error("Error fetching data:", err.responseData?.data || err.message );
+            console.error("Error fetching data: ", err.responseData?.data || err.message );
             setError(err)
         } finally {
             setLoading(false)

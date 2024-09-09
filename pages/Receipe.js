@@ -1,4 +1,4 @@
-import { FlatList, SafeAreaView, StyleSheet, Text, Modal, Pressable, View } from 'react-native'
+import { FlatList, SafeAreaView, StyleSheet, Text, Modal, View } from 'react-native'
 import React, { useState } from 'react'
 import useFetchMeals from '../hooks/useFetchMeals';
 import { RECEIPE_URL } from "@env"

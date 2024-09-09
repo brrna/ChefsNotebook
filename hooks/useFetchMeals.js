@@ -13,7 +13,7 @@ function useFetchMeals(url) {
             const response = await axios.get(url);
             setData(response.data.meals)
         } catch (err) {
-            console.error("Error fetching data:", err.responseData?.data || err.message )
+            console.error("meals hatası", err.responseData?.data || err.message )
             setError(err)
         } finally{
             setLoading(false)

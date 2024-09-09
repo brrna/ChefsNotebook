@@ -1,5 +1,5 @@
 import { Text, View, Image, Pressable, SafeAreaView, Modal } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import createdStyle from './DailyCardStyle'
 import DayModal from '../dayModal/DayModal'
 import { useNavigation } from '@react-navigation/native'

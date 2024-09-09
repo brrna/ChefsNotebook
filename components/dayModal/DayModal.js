@@ -1,5 +1,5 @@
 import { ScrollView, Image, View, SafeAreaView, Text } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import createdStyle from './DayModalStyle'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import YoutubePlayer from '../youtube/YoutubePlayer'

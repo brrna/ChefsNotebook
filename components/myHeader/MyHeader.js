@@ -1,6 +1,5 @@
 import { View, Text } from "react-native"
 import createStyles from "./MyHeaderStyle"
-import { useContext } from "react"
 import { useSelector } from "react-redux"
 
 const MyHeader = ({header, textColor}) => {

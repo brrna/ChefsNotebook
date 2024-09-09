@@ -4,7 +4,7 @@ import MyHeader from '../components/myHeader/MyHeader'
 import useFetchCategories from '../hooks/useFetchCategories'
 import Loading from "../components/loading/Loading"
 import Error from '../components/error/Error'
-import { CATEGORY_URL } from "@env"
+import { BASE_URL } from "@env"
 import MyFlatlist from '../components/myFlatlist/MyFlatlist'
 import MealPart from '../components/mealPart/MealPart'
 import { animations } from '../components/loading/Animations'
@@ -15,8 +15,7 @@ const Categories = () => {
   const color = useSelector((state) => state.color)
 
   const styles = createStyles(color)
-  const { loading, error } = useFetchCategories(CATEGORY_URL);
-
+  const { loading, error } = useFetchCategories(`${BASE_URL}`);
 
   if (loading) {
     return (
