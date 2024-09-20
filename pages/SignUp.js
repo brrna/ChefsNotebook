@@ -17,24 +17,32 @@ const SignUp = () => {
       style={styles.content}>
       <View style={styles.container} >
         <View style={styles.view} >
-          <MyInput placeholder={"first name"} />
+          <MyInput
+            placeholder={"first name"} />
         </View>
         <View style={styles.view} >
-          <MyInput placeholder={"last name"} />
+          <MyInput
+            placeholder={"last name"} />
         </View>
         <View style={styles.view} >
-          <MyInput placeholder={"username"} />
+          <MyInput
+            placeholder={"username"} />
         </View>
         <View style={styles.view} >
-          <MyInput placeholder={"email"} keyboardType={"email-address"} />
+          <MyInput
+            placeholder={"email"}
+            keyboardType={"email-address"} />
         </View>
         <View style={styles.view} >
-          <MyInput placeholder={"password"} />
+          <MyInput
+            placeholder={"password"} />
         </View>
         <View style={styles.view} >
-          <MyInput placeholder={"password repeat"} />
+          <MyInput
+            placeholder={"password repeat"} />
         </View>
-        <MyButton buttonText={"sign up"} />
+        <MyButton
+          buttonText={"sign up"} />
       </View>
     </KeyboardAwareScrollView>
   )

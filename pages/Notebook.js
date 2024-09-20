@@ -25,7 +25,6 @@ const Notebook = () => {
   const getData = async() => {
     const querySnapshot = await getDocs(collection(db, "ReactNativeLesson"));
     querySnapshot.forEach((doc) => {
-      //console.log(`${doc.id} => ${doc.data()} `);
       setData(doc.data())
       console.log("clicked")
     })
