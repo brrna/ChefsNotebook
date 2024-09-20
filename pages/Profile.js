@@ -3,10 +3,13 @@ import React, { useState } from 'react'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import option from "../assets/values/profile_options.json"
 import ProfileOption from '../components/profileOption/ProfileOption'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
+import { logout } from "../redux/user/userSlice"
 
 const Profile = () => {
+
+    const dispatch = useDispatch()
 
     const color = useSelector((state) => state.color )
     const styles = createStyles(color);
@@ -24,11 +27,20 @@ const Profile = () => {
             case 1:
                 console.log("add favorite");
                 break;
+            case 2:
+                handleLogout()
+                break;
             default:
                 console.log("Unknown option");
                 break;
         }
     }
+
+    //logout
+    const handleLogout = () => {
+        dispatch(logout())
+    }
+
     return (
         <SafeAreaView style={styles.container} >
             <View style={styles.profileView} >

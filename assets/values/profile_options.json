@@ -8,5 +8,10 @@
         "id": 1,
         "text": "my favorite receipes",
         "icon": "cards-playing-heart"
+    },
+    {
+        "id": 2,
+        "text": "log out",
+        "icon": "logout"
     }
 ]
