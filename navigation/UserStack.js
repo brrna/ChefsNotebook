@@ -4,13 +4,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Categories from "../pages/Categories"
 import Receipe from "../pages/Receipe"
 import Meals from "../pages/Meals" 
-import Profile from "../pages/Profile"
 import { useSelector } from 'react-redux'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import Notebook from '../pages/Notebook'
 
 const UserStack = () => {
 
@@ -36,15 +34,6 @@ const UserStack = () => {
         )
     }
 
-    function ProfileStack() {
-        return(
-            <Stack.Navigator screenOptions={{headerShown: false}} >
-                <Stack.Screen name='ProfileScreen' component={Profile} />
-                <Stack.Screen name='Notebook' component={Notebook} />
-            </Stack.Navigator>
-        )
-    }
-
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -61,10 +50,7 @@ const UserStack = () => {
           } else if (route.name === 'Meal') {
             iconName = focused ? 'food-takeout-box' : 'food-takeout-box-outline'
             return <MaterialCommunityIcons name={iconName} size={size} color={color} />
-          } else if (route.name === 'Profile') {
-            iconName = focused ? 'user-circle' : 'user-o'
-            return <FontAwesome name={iconName} size={size} color={color} /> 
-          }
+          } 
           
         }
       })} >
@@ -82,14 +68,6 @@ const UserStack = () => {
         options={{
           tabBarStyle: {
             backgroundColor: color.navyBlue,
-            height:hp(9.5) }
-        }} />
-        <Tab.Screen 
-        name='Profile' 
-        component={ProfileStack}
-        options={{
-          tabBarStyle: {
-            backgroundColor: color.darkGreen,
             height:hp(9.5) }
         }} />
     </Tab.Navigator>

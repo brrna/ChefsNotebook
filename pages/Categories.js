@@ -15,7 +15,7 @@ const Categories = () => {
   const color = useSelector((state) => state.color)
 
   const styles = createStyles(color)
-  const { loading, error } = useFetchCategories(`${BASE_URL}`);
+  const { loading, error } = useFetchCategories(BASE_URL);
 
   if (loading) {
     return (

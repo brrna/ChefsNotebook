@@ -15,7 +15,7 @@ import { useSelector } from 'react-redux'
 const Meals = () => {
 
   const color = useSelector((state) => state.color)
-  const { data, loading, error } = useFetchMeals(`${RANDOM_MEAL}`);
+  const { data, loading, error } = useFetchMeals(RANDOM_MEAL);
   const meal = useFetchMealOfTheDay(data);
   const styles = createdStyle(color);
 
