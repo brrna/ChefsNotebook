@@ -67,7 +67,7 @@ const createStyles = (color) => {
   return StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: color.cream
+      backgroundColor: color.white
     },
     image: {
       width: wp(100),

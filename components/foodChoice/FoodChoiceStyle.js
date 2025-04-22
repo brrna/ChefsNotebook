@@ -16,12 +16,12 @@ export default function createStyles(color, fonts) {
             resizeMode: "contain",
             marginBottom: hp(1),
             borderWidth: wp(1),
-            borderColor: color.cream
+            borderColor: color.white
         },
         text: {
             fontSize: hp(3.5),
             fontFamily: fonts.handwrite,
-            color: color.cream,
+            color: color.white,
             marginBottom: hp(5)
         }
     })

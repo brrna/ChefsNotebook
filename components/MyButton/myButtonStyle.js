@@ -13,14 +13,14 @@ export default function createStyles(color, fonts) {
             fontFamily: fonts.dosis,
             marginBottom: hp(1),
             fontSize: hp(2.7),
-            color: color.cream
+            color: color.white
         },
         button: {
             width: wp(91),
             height: hp(5),
             borderRadius: 8,
             alignItems: "center",
-            borderColor: color.cream,
+            borderColor: color.white,
             borderWidth: 2
         },
         buttonText:{

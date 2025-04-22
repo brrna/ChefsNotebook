@@ -117,6 +117,10 @@ android {
         versionCode 1
         versionName "1.0.0"
     }
+        compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -173,6 +177,10 @@ dependencies {
     def isGifEnabled = (findProperty('expo.gif.enabled') ?: "") == "true";
     def isWebpEnabled = (findProperty('expo.webp.enabled') ?: "") == "true";
     def isWebpAnimatedEnabled = (findProperty('expo.webp.animated') ?: "") == "true";
+
+    classpath("com.android.tools.build:gradle:7.3.1") // versiyon ekledik
+    classpath("com.facebook.react:react-native-gradle-plugin")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0") 
 
     if (isGifEnabled) {
         // For animated gif support

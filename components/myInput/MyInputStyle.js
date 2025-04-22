@@ -13,13 +13,13 @@ export default function createStyles(color, fonts) {
             height: hp(7),
             width: wp(90),
             borderBottomWidth: 2,
-            borderBottomColor: color.cream,
+            borderBottomColor: color.white,
             justifyContent: "flex-end"
         },
         inputText: {
             fontFamily: fonts.dosis,
             fontSize: hp(3),
-            color: color.cream
+            color: color.white
         }
     })
 }

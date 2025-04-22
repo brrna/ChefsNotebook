@@ -5,7 +5,7 @@ export default function createdStyle (color) {
     return StyleSheet.create({
         container: {
             flex: 1,
-            backgroundColor: color.cream,
+            backgroundColor: color.white,
             justifyContent: "center",
             alignItems: "center"
         },

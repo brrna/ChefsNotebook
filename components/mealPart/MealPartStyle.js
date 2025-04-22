@@ -19,7 +19,7 @@ export default function createStyles(color, fonts) {
             color: color.navyBlue
         },
         mealView: {
-            backgroundColor: color.green,
+            backgroundColor: color.navyBlue,
             width: wp(155),
             height: hp(59),
             borderTopEndRadius: wp(100),
@@ -34,7 +34,7 @@ export default function createStyles(color, fonts) {
         text: {
             fontFamily: fonts.handwrite,
             fontSize: wp(8),
-            color: color.darkGreen
+            color: color.navyBlue
         }
     })
 }

@@ -32,7 +32,7 @@ const Categories = () => {
   return (
     <SafeAreaView style={styles.container} >
       <StatusBar />
-      <MyHeader header={"Chef's Notebook"} textColor={color.green} />
+      <MyHeader header={"Chef's Notebook"} textColor={color.navyBlue} />
       <MyFlatlist />
       <MealPart />
     </SafeAreaView>
@@ -45,7 +45,7 @@ const createStyles = (color) => {
   return StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: color.cream,
+      backgroundColor: color.white,
       alignItems: "center"
     }
   })

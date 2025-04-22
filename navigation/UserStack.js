@@ -9,6 +9,8 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-nat
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import User from "../pages/User"
 
 const UserStack = () => {
 
@@ -34,6 +36,14 @@ const UserStack = () => {
         )
     }
 
+    function UserStack() {
+      return(
+        <Stack.Navigator screenOptions={{headerShown: false}} >
+            <Stack.Screen name='UserScreen' component={User} />
+        </Stack.Navigator>
+      )
+    }
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -50,7 +60,10 @@ const UserStack = () => {
           } else if (route.name === 'Meal') {
             iconName = focused ? 'food-takeout-box' : 'food-takeout-box-outline'
             return <MaterialCommunityIcons name={iconName} size={size} color={color} />
-          } 
+          } else if (route.name === 'User') {
+            iconName = focused ? 'handshake' : 'handshake-outline'
+            return <MaterialCommunityIcons name={iconName} size={size} color={color} />
+          }
           
         }
       })} >
@@ -59,8 +72,10 @@ const UserStack = () => {
         component={HomeStack}
         options={{
           tabBarStyle: {
-            backgroundColor: color.green,
-            height: hp(9.5) }
+            backgroundColor: color.navyBlue,
+            height: hp(9.5),
+            borderTopWidth: 0
+             }
         }} />
       <Tab.Screen 
         name='Meal' 
@@ -70,6 +85,9 @@ const UserStack = () => {
             backgroundColor: color.navyBlue,
             height:hp(9.5) }
         }} />
+        <Tab.Screen 
+         name='User'
+         component={UserStack} />
     </Tab.Navigator>
   )
 }

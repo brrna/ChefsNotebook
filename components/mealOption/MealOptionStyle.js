@@ -15,9 +15,9 @@ export default function createStyle(color) {
             justifyContent: "center",
             alignItems: "center",
             borderWidth: 1,
-            borderColor: color.darkGreen,
+            borderColor: color.navyBlue,
             borderRadius: wp(5),
-            backgroundColor: color.cream
+            backgroundColor: color.white
         },
         image: {
             height: hp(13),
