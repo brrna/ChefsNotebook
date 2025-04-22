@@ -8,8 +8,6 @@ import { useSelector } from 'react-redux'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import User from "../pages/User"
 
 const UserStack = () => {
@@ -87,7 +85,13 @@ const UserStack = () => {
         }} />
         <Tab.Screen 
          name='User'
-         component={UserStack} />
+         component={UserStack}
+         options={{
+          tabBarStyle: {
+            borderTopWidth: 0,
+            backgroundColor: color.navyBlue,
+            height:hp(9.5) }
+        }} />
     </Tab.Navigator>
   )
 }
