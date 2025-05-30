@@ -16,6 +16,14 @@
     "preview4": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "env": {
+        "BASE_URL": "https://www.themealdb.com/api.php",
+        "CATEGORY_URL": "https://www.themealdb.com/api/json/v1/1/categories.php",
+        "MEAL_URL": "https://www.themealdb.com/api/json/v1/1/filter.php?c=",
+        "RECEIPE_URL": "https://www.themealdb.com/api/json/v1/1/lookup.php?i=",
+        "RANDOM_MEAL": "https://www.themealdb.com/api/json/v1/1/random.php"
+      }
+    }
   }
 }
