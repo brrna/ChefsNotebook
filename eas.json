@@ -17,6 +17,9 @@
       "distribution": "internal"
     },
     "production": {
+      "android": {
+        "buildType": "app-bundle"
+      },
       "env": {
         "BASE_URL": "https://www.themealdb.com/api.php",
         "CATEGORY_URL": "https://www.themealdb.com/api/json/v1/1/categories.php",

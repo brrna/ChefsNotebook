@@ -2,7 +2,7 @@
   "expo": {
     "name": "ChefsNotebook",
     "slug": "ChefsNotebook",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
@@ -12,7 +12,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.brrna.ChefsNotebook"
     },
     "android": {
       "adaptiveIcon": {
@@ -20,7 +21,9 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.brrna.ChefsNotebook",
-      "versionCode": 3
+      "versionCode": 4,
+      "targetSdkVersion": 35,
+      "compileSdkVersion": 35
     },
     "web": {
       "favicon": "./assets/favicon.png"
